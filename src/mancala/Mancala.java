@@ -16,6 +16,7 @@ public class Mancala extends JFrame implements Runnable {
     Image Board;
     Image Giraffe;
     Image Chicken;
+    Image Grass;
             
     boolean player1Turn;
     int mostRecentRow;
@@ -137,7 +138,9 @@ public class Mancala extends JFrame implements Runnable {
                 Window.getWidth2()/4+70,Window.getHeight2()/4,this);
         g.drawImage(Giraffe,Window.getX(250)-40,Window.getY(2)+Window.getHeight2()/4,
                 Window.getWidth2()/4+70,Window.getHeight2()/4,this);
-
+        g.drawImage(Grass,Window.getX(250)-40,Window.getY(2)+Window.getHeight2()/4,
+                Window.getWidth2()/4+70,Window.getHeight2()/4,this);
+        
             g.setColor(Color.black);
             g.setFont(new Font("Arial",Font.PLAIN,15));
             g.drawString("Player1 = " + Player.getPlayer1().getPoints(),50,60);                     
@@ -198,6 +201,7 @@ public class Mancala extends JFrame implements Runnable {
             Chicken = Toolkit.getDefaultToolkit().getImage("./Chicken.png");
             Panda = Toolkit.getDefaultToolkit().getImage("./Cartoon-Panda-Transparent-Image.png");
             Giraffe = Toolkit.getDefaultToolkit().getImage("./Giraffe.png");
+            Grass = Toolkit.getDefaultToolkit().getImage("./grass.jfif");
             
             reset();
 
