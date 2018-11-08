@@ -4,26 +4,10 @@ import java.awt.*;
 public class Marbles {
     private Color color;
     private int value;
-//add or modify.  Variable already added for you.  You must add the rest of the code.
-    Marbles(Color _color)
-    {
+    
+    Marbles(Color _color){
         value = (int)(Math.random()*5+1);
         color = _color;
-    }
-    public int getValue() {
-        
-        return value;
-    }
-    public Color getColor()
-    {
-        return (color);
-    }
-    public int getnewValue() {
-        int newVal = value;
-        while (newVal == value){
-            value = (int)(Math.random()*5+1);
-        }
-        return value;
     }
     
     public void draw(Graphics2D g,int row,int column,int xdelta,int ydelta) {
@@ -35,6 +19,19 @@ public class Marbles {
         g.drawString("" + value,Window.getX(column*xdelta+34),Window.getY(row*ydelta+50));                     
         
     }    
+    
+    public int getValue() {
+        
+        return value;
+    }
+    public Color getColor(){
+        return (color);
+    }
+    public int getnewValue() {
+        int newVal = value;
+        while (newVal == value){
+            value = (int)(Math.random()*5+1);
+        }
+        return value;
+    }
 }
-
-

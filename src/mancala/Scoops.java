@@ -20,12 +20,6 @@ public class Scoops {
             }
         }
     }
-   
-    public static int GetPoints() {
-        return points;
-    }
-    
-
     public static void AddTokenPixel(int xpixel,int ypixel) {
 
         if (xpixel < 0 || xpixel > Window.getWidth2() || ypixel < 0 || 
@@ -52,10 +46,6 @@ public class Scoops {
             currXVal += xdelta;
         }
 
-//add or modify. When the selected square is empty, then add the token like normal.
-//               When the selected square is your own, then change the value.
-//               When the selected square is your opponents, then remove the token and shuffle tokens down.
-
         int currlRow = NUM_ROWS-1;
         while(currlRow > 0 && board[currlRow][currCol] != null)
         {
@@ -65,9 +55,6 @@ public class Scoops {
 
         return;
     }
-
-
-//add or modify. Method already added for you.
     public static void ChangeTokenPixel(int xpixel,int ypixel) {
         if (xpixel < 0 || xpixel > Window.getWidth2() || ypixel < 0 || 
            ypixel > Window.getHeight2())
@@ -92,8 +79,6 @@ public class Scoops {
             currXVal += xdelta;
         }
     }
-            
-    
     public static void Draw(Graphics2D g) {
 //Calculate the width and height of each board square.
         int ydelta = Window.getHeight2()/NUM_ROWS;
@@ -125,13 +110,7 @@ public class Scoops {
             }
         } 
     }
-    
-
-    
-////////    
-//add or modify.  CheckWin now checks the whole board.
-    public static boolean CheckWin()
-    {    
+    public static boolean CheckWin(){    
         for (int row=0;row<NUM_ROWS;row++)
         {
             for (int col=0;col<NUM_COLUMNS;col++)
@@ -144,7 +123,8 @@ public class Scoops {
         return (false);
     }        
     
-    
-        
+    public static int GetPoints() {
+        return points;
+    }
 }
 

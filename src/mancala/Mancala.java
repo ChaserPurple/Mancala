@@ -1,9 +1,3 @@
-
-/* ASHLEY YOUNG
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package mancala;
 
 
@@ -169,7 +163,6 @@ public class Mancala extends JFrame implements Runnable {
         }
         gOld.drawImage(image, 0, 0, null);
     }
-
 ////////////////////////////////////////////////////////////////////////////
 // needed for     implement runnable
     public void run() {
@@ -184,7 +177,6 @@ public class Mancala extends JFrame implements Runnable {
             }
         }
     }
-    
 /////////////////////////////////////////////////////////////////////////
     public void reset() {
 
@@ -213,7 +205,6 @@ public class Mancala extends JFrame implements Runnable {
 
         
     }
-
 ////////////////////////////////////////////////////////////////////////////
     public void start() {
         if (relaxer == null) {
