@@ -4,7 +4,6 @@ import java.awt.*;
 public class Marbles {
     private Color color;
     private int value;
-//add or modify.  Variable already added for you.  You must add the rest of the code.
     Marbles(Color _color)
     {
         value = (int)(Math.random()*5+1);
