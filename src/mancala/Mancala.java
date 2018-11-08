@@ -12,10 +12,10 @@ public class Mancala extends JFrame implements Runnable {
     boolean animateFirstTime = true;
     Image image;
     Graphics2D g;
-    Image Panda;
+//    Image Panda;
     Image Board;
-    Image Giraffe;
-    Image Chicken;
+//    Image Giraffe;
+//    Image Chicken;
             
     boolean player1Turn;
     int mostRecentRow;
@@ -131,12 +131,7 @@ public class Mancala extends JFrame implements Runnable {
         Scoops.Draw(g);
         g.drawImage(Board,Window.getX(0)-40,Window.getY(2)+Window.getHeight2()/4,
                 Window.getWidth2()+70,Window.getHeight2()/2,this);
-        g.drawImage(Panda,Window.getX(150)-40,Window.getY(2)+Window.getHeight2()/4,
-                Window.getWidth2()/4+70,Window.getHeight2()/4,this);
-        g.drawImage(Chicken,Window.getX(0)-40,Window.getY(2)+Window.getHeight2()/4,
-                Window.getWidth2()/4+70,Window.getHeight2()/4,this);
-        g.drawImage(Giraffe,Window.getX(250)-40,Window.getY(2)+Window.getHeight2()/4,
-                Window.getWidth2()/4+70,Window.getHeight2()/4,this);
+        
 
             g.setColor(Color.black);
             g.setFont(new Font("Arial",Font.PLAIN,15));
@@ -197,9 +192,9 @@ public class Mancala extends JFrame implements Runnable {
                 Window.ysize = getSize().height;
             }
             Board = Toolkit.getDefaultToolkit().getImage("./Mancala.png");
-            Chicken = Toolkit.getDefaultToolkit().getImage("./Chicken.png");
-            Panda = Toolkit.getDefaultToolkit().getImage("./Cartoon-Panda-Transparent-Image.png");
-            Giraffe = Toolkit.getDefaultToolkit().getImage("./Giraffe.png");
+//            Chicken = Toolkit.getDefaultToolkit().getImage("./Chicken.png");
+//            Panda = Toolkit.getDefaultToolkit().getImage("./Cartoon-Panda-Transparent-Image.png");
+//            Giraffe = Toolkit.getDefaultToolkit().getImage("./Giraffe.png");
             
             reset();
 
