@@ -30,6 +30,7 @@ public class Mancala extends JFrame implements Runnable {
 
 
     public static void main(String[] args) {
+<<<<<<< HEAD
         Mancala frame = new Mancala();
         frame.setSize(Window.WINDOW_WIDTH, Window.WINDOW_HEIGHT);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -183,6 +184,9 @@ public class Mancala extends JFrame implements Runnable {
             } catch (InterruptedException e) {
             }
         }
+=======
+        System.out.println("Testing...Ariana Style");
+>>>>>>> 2ad3d0a33bcb5684bb11050e5fe87a8878539d9f
     }
     
 /////////////////////////////////////////////////////////////////////////
