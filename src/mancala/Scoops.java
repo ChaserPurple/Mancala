@@ -20,10 +20,6 @@ public class Scoops {
             }
         }
     }
-   
-    public static int GetPoints() {
-        return points;
-    }
     public static void AddTokenPixel(int xpixel,int ypixel) {
 
         if (xpixel < 0 || xpixel > Window.getWidth2() || ypixel < 0 || 
@@ -114,8 +110,7 @@ public class Scoops {
             }
         } 
     }
-    public static boolean CheckWin()
-    {    
+    public static boolean CheckWin(){    
         for (int row=0;row<NUM_ROWS;row++)
         {
             for (int col=0;col<NUM_COLUMNS;col++)
@@ -128,7 +123,8 @@ public class Scoops {
         return (false);
     }        
     
-    
-        
+    public static int GetPoints() {
+        return points;
+    }
 }
 

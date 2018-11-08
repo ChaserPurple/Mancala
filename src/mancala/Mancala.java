@@ -16,7 +16,7 @@ public class Mancala extends JFrame implements Runnable {
     Image Board;
 //    Image Giraffe;
 //    Image Chicken;
-            
+    Image Grass;
     boolean player1Turn;
     int mostRecentRow;
     int mostRecentCol;
@@ -131,8 +131,9 @@ public class Mancala extends JFrame implements Runnable {
         Scoops.Draw(g);
         g.drawImage(Board,Window.getX(0)-40,Window.getY(2)+Window.getHeight2()/4,
                 Window.getWidth2()+70,Window.getHeight2()/2,this);
+        g.drawImage(Grass,Window.getX(0),Window.getY(0),
+                Window.getWidth2(),Window.getHeight2(),this);
         
-
             g.setColor(Color.black);
             g.setFont(new Font("Arial",Font.PLAIN,15));
             g.drawString("Player1 = " + Player.getPlayer1().getPoints(),50,60);                     
@@ -158,7 +159,6 @@ public class Mancala extends JFrame implements Runnable {
         }
         gOld.drawImage(image, 0, 0, null);
     }
-
 ////////////////////////////////////////////////////////////////////////////
 // needed for     implement runnable
     public void run() {
@@ -173,7 +173,6 @@ public class Mancala extends JFrame implements Runnable {
             }
         }
     }
-    
 /////////////////////////////////////////////////////////////////////////
     public void reset() {
 
@@ -192,9 +191,12 @@ public class Mancala extends JFrame implements Runnable {
                 Window.ysize = getSize().height;
             }
             Board = Toolkit.getDefaultToolkit().getImage("./Mancala.png");
+
 //            Chicken = Toolkit.getDefaultToolkit().getImage("./Chicken.png");
 //            Panda = Toolkit.getDefaultToolkit().getImage("./Cartoon-Panda-Transparent-Image.png");
 //            Giraffe = Toolkit.getDefaultToolkit().getImage("./Giraffe.png");
+            Grass = Toolkit.getDefaultToolkit().getImage("./grass.jfif");
+
             
             reset();
 
@@ -202,7 +204,6 @@ public class Mancala extends JFrame implements Runnable {
 
         
     }
-
 ////////////////////////////////////////////////////////////////////////////
     public void start() {
         if (relaxer == null) {
