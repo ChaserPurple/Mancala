@@ -163,7 +163,6 @@ public class Mancala extends JFrame implements Runnable {
         }
         gOld.drawImage(image, 0, 0, null);
     }
-
 ////////////////////////////////////////////////////////////////////////////
 // needed for     implement runnable
     public void run() {
@@ -178,7 +177,6 @@ public class Mancala extends JFrame implements Runnable {
             }
         }
     }
-    
 /////////////////////////////////////////////////////////////////////////
     public void reset() {
 
@@ -207,7 +205,6 @@ public class Mancala extends JFrame implements Runnable {
 
         
     }
-
 ////////////////////////////////////////////////////////////////////////////
     public void start() {
         if (relaxer == null) {
