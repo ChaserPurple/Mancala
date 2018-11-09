@@ -130,48 +130,48 @@ public class Mancala extends JFrame implements Runnable {
         g.setColor(Color.red);
         g.drawPolyline(x, y, 5);
 
+        if(!begun){
+            Drawing.drawScreen();
+        }
+        
         if (animateFirstTime) {
             gOld.drawImage(image, 0, 0, null);
             return;
         }
 
-        Scoops.Draw(g);
-                g.drawImage(Grass,Window.getX(0),Window.getY(0),
-                Window.getWidth2(),Window.getHeight2(),this);
-        g.drawImage(Board,Window.getX(0)-40,Window.getY(2)+Window.getHeight2()/4,
-                Window.getWidth2()+70,Window.getHeight2()/2,this);
-        //animal.Draw(g);
+        if(begun){
+            Scoops.Draw(g);
+            g.drawImage(Grass,Window.getX(0),Window.getY(0),Window.getWidth2(),Window.getHeight2(),this);
+            g.drawImage(Board,Window.getX(0)-40,Window.getY(2)+Window.getHeight2()/4,
+                    Window.getWidth2()+70,Window.getHeight2()/2,this);
+            //animal.Draw(g);
 
-        
-            g.setColor(Color.white);
-            g.setFont(new Font("Arial",Font.BOLD,25));
-            g.drawString("Player1 = " + Player.getPlayer1().getPoints(),50,60);                     
-            g.drawString("Player2 = " + Player.getPlayer2().getPoints(),700,60);                     
-            
-            if (Player.getCurrentPlayer()== Player.getPlayer1())
+
+                if (Player.getCurrentPlayer()== Player.getPlayer1())
+                {
+                g.setColor(Color.white);
+                g.setFont(new Font("Arial",Font.BOLD,25));
+                g.drawString("Player1's turn",250,60);
+                }
+                else {
+                g.setColor(Color.black);
+                g.setFont(new Font("Arial",Font.BOLD,25));
+                g.drawString("Player2's turn" ,250,60);   
+                }
+
+                g.setColor(new Color(98,53,18));
+                g.fillRect(Window.getX(230),Window.getY(75)+Window.getHeight2()/3,
+                    Window.getWidth2()/2,Window.getHeight2()/9);
+                g.setColor(Color.black);
+                g.setFont(new Font("Arial",Font.BOLD,35));
+                g.drawString("ANIMACALA" ,350,350);   
+
+            if (win)
             {
-            g.setColor(Color.white);
-            g.setFont(new Font("Arial",Font.BOLD,25));
-            g.drawString("Player1's turn",250,60);
+                g.setColor(Color.blue);
+                g.setFont(new Font("Arial",Font.PLAIN,45));
+                g.drawString("WIN",50,200);         
             }
-            else {
-            g.setColor(Color.black);
-            g.setFont(new Font("Arial",Font.BOLD,25));
-            g.drawString("Player2's turn" ,250,60);   
-            }
-            
-            g.setColor(new Color(98,53,18));
-            g.fillRect(Window.getX(230),Window.getY(75)+Window.getHeight2()/3,
-                Window.getWidth2()/2,Window.getHeight2()/9);
-            g.setColor(Color.black);
-            g.setFont(new Font("Arial",Font.BOLD,35));
-            g.drawString("ANIMACALA" ,350,350);   
-            
-        if (win)
-        {
-            g.setColor(Color.blue);
-            g.setFont(new Font("Arial",Font.PLAIN,45));
-            g.drawString("WIN",50,200);         
         }
         gOld.drawImage(image, 0, 0, null);
     }
