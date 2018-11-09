@@ -32,20 +32,52 @@ public class Drawing {
     /////////////////////////////////////////////////////////////////////////
     public static void drawScreen()
     {
+        Color clickedColor = new Color(19,89,28);
+        Color unClickedColor = new Color(19,89,28);
+        
+        //CHANGE TO GRASS
         g.setColor(new Color(18,69,10));
         g.fillRect(Window.getX(0),Window.getY(0),Window.getWidth2(),Window.getHeight2());
         
         g.setColor(Color.white);
-        g.fillRect(Window.getX(350),Window.getY(400),150,50);
+        g.fillRect(Window.getX(395),Window.getY(400),150,50);
         
-        g.setColor(new Color(34,38,85));
-        g.fillRect(Window.getX(355),Window.getY(405),140,40);
         
+        
+        //Ready
+        g.setColor(new Color(18,255,10));
+        g.fillRect(Window.getX(400),Window.getY(405),140,40);
+        
+        //Modes
+        g.setColor(new Color(18,255,10));
+        g.fillRect(Window.getX(255),Window.getY(200),140,40);
+        g.setColor(new Color(18,255,10));
+        g.fillRect(Window.getX(405),Window.getY(200),140,40);
+        g.setColor(new Color(18,255,10));
+        g.fillRect(Window.getX(555),Window.getY(200),140,40);
+        
+        //Decide Player
+        g.setColor(new Color(18,255,10));
+        g.fillRect(Window.getX(330),Window.getY(270),140,40);
+        g.setColor(new Color(18,255,10));
+        g.fillRect(Window.getX(480),Window.getY(270),140,40);
+        
+        g.setColor(Color.white);
+        g.setFont(new Font("Times New Roman",Font.ITALIC,50));
+        g.drawString("ANIMACALA",Window.getX(100),Window.getY(150));
+        g.setFont(new Font("Times New Roman",Font.ITALIC,30));
+        g.drawString("READY",Window.getX(425),Window.getY(435));
+        
+        g.drawString("Capture",Window.getX(270),Window.getY(230));
+        g.drawString("Continuous",Window.getX(405),Window.getY(230));
+        g.drawString("Theft",Window.getX(590),Window.getY(230));
         g.setColor(Color.red);
         g.setFont(new Font("Arial",Font.PLAIN,50));
-        g.drawString("SPACESHIP",Window.getX(100),Window.getY(150));
+        g.drawString("ANIMACALA",Window.getX(100),Window.getY(150));
         g.setFont(new Font("Arial",Font.PLAIN,40));
         g.drawString("PLAY",Window.getX(375),Window.getY(440));
         
+        g.drawString("1 Player",Window.getX(350),Window.getY(300));
+        g.drawString("2 Player",Window.getX(500),Window.getY(300));
     }
 }
