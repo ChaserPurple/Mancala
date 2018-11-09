@@ -1,6 +1,5 @@
 package mancala;
 
-
 import java.io.*;
 import java.awt.*;
 import java.awt.geom.*;
@@ -47,7 +46,6 @@ public class Mancala extends JFrame implements Runnable {
                 if (e.BUTTON1 == e.getButton() ) {
                     e.getX();
                     e.getY();
-
                     Scoops.AddTokenPixel(e.getX() - Window.getX(0),
                             e.getY() - Window.getY(0));  
                     
@@ -140,37 +138,47 @@ public class Mancala extends JFrame implements Runnable {
                 Window.getWidth2(),Window.getHeight2(),this);
         g.drawImage(Board,Window.getX(0)-40,Window.getY(2)+Window.getHeight2()/4,
                 Window.getWidth2()+70,Window.getHeight2()/2,this);
-        //animal.Draw(g);
+//        Animal.draw(g);
 
         
-            g.setColor(Color.white);
+            g.setColor(Color.black);
             g.setFont(new Font("Arial",Font.BOLD,25));
-            g.drawString("Player1 = " + Player.getPlayer1().getPoints(),50,60);                     
-            g.drawString("Player2 = " + Player.getPlayer2().getPoints(),700,60);                     
+            g.drawString("Player1's side",375,463);                     
+            g.drawString("Player2's side",375,213);
+            g.drawString("Player1's bank",680,463);                     
+            g.drawString("Player2's bank",45,213);
             
             if (Player.getCurrentPlayer()== Player.getPlayer1())
             {
             g.setColor(Color.white);
-            g.setFont(new Font("Arial",Font.BOLD,25));
-            g.drawString("Player1's turn",250,60);
+            g.setFont(new Font("Arial",Font.BOLD,45));
+            g.drawString("Player1's turn",300,510);
             }
             else {
-            g.setColor(Color.black);
-            g.setFont(new Font("Arial",Font.BOLD,25));
-            g.drawString("Player2's turn" ,250,60);   
+            g.setColor(Color.white);
+            g.setFont(new Font("Arial",Font.BOLD,45));
+            g.drawString("Player2's turn" ,300,175);   
             }
             
             g.setColor(new Color(98,53,18));
+
+<<<<<<< HEAD
 <<<<<<< HEAD
             g.fillRect(Window.getX(230),Window.getY(75)+Window.getHeight2()/3,
                 Window.getWidth2()/2,Window.getHeight2()/9);
+
 =======
+>>>>>>> 5555325f97c07c4ceecb3585437c2541cb13d655
+=======
+>>>>>>> 5555325f97c07c4ceecb3585437c2541cb13d655
             g.fillRect(Window.getX(315),Window.getY(75)+Window.getHeight2()/3,
                 Window.getWidth2()/4+50,Window.getHeight2()/10);
->>>>>>> f50d2af8943246926154f6e0caee52ac507bc3f3
+
             g.setColor(Color.black);
             g.setFont(new Font("Arial",Font.BOLD,35));
-            g.drawString("ANIMACALA" ,350,350);   
+            g.drawString("ANIMACALA" ,350,350); 
+            
+            
             
         if (win)
         {
@@ -221,7 +229,7 @@ public class Mancala extends JFrame implements Runnable {
 //            Chicken = Toolkit.getDefaultToolkit().getImage("./Chicken.png");
 //            Panda = Toolkit.getDefaultToolkit().getImage("./Cartoon-Panda-Transparent-Image.png");
 //            Giraffe = Toolkit.getDefaultToolkit().getImage("./Giraffe.png");
-            Grass = Toolkit.getDefaultToolkit().getImage("./grass.jpg");
+            Grass = Toolkit.getDefaultToolkit().getImage("./cartoon-grass-8.jpg");
 
             
             reset();

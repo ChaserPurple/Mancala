@@ -43,7 +43,7 @@ public class Drawing {
         
         g.setColor(Color.red);
         g.setFont(new Font("Arial",Font.PLAIN,50));
-        g.drawString("SPACESHIP",Window.getX(100),Window.getY(150));
+        g.drawString("ANIMACALA",Window.getX(100),Window.getY(150));
         g.setFont(new Font("Arial",Font.PLAIN,40));
         g.drawString("PLAY",Window.getX(375),Window.getY(440));
         
