@@ -11,6 +11,7 @@ public class Mancala extends JFrame implements Runnable {
  
     boolean animateFirstTime = true;
     Image image;
+    Animal animal;
     Graphics2D g;
 //    Image Panda;
     Image Board;
@@ -21,7 +22,12 @@ public class Mancala extends JFrame implements Runnable {
     int mostRecentRow;
     int mostRecentCol;
     boolean win;
-
+    public static boolean continuous;
+    public static boolean capture;
+    public static boolean theft;
+    public static boolean begun;
+    public static boolean onePlayer;
+    
 
     public static void main(String[] args) {
         Mancala frame = new Mancala();
@@ -106,6 +112,7 @@ public class Mancala extends JFrame implements Runnable {
             Window.ysize = getSize().height;
             image = createImage(Window.xsize, Window.ysize);
             g = (Graphics2D) image.getGraphics();
+            Drawing.setDrawingInfo(g,this);
             g.setRenderingHint(RenderingHints.KEY_ANTIALIASING,
                     RenderingHints.VALUE_ANTIALIAS_ON);
         }
@@ -129,28 +136,37 @@ public class Mancala extends JFrame implements Runnable {
         }
 
         Scoops.Draw(g);
+                g.drawImage(Grass,Window.getX(0),Window.getY(0),
+                Window.getWidth2(),Window.getHeight2(),this);
         g.drawImage(Board,Window.getX(0)-40,Window.getY(2)+Window.getHeight2()/4,
                 Window.getWidth2()+70,Window.getHeight2()/2,this);
-        g.drawImage(Grass,Window.getX(0),Window.getY(0),
-                Window.getWidth2(),Window.getHeight2(),this);
+        //animal.Draw(g);
+
         
-            g.setColor(Color.black);
-            g.setFont(new Font("Arial",Font.PLAIN,15));
+            g.setColor(Color.white);
+            g.setFont(new Font("Arial",Font.BOLD,25));
             g.drawString("Player1 = " + Player.getPlayer1().getPoints(),50,60);                     
-            g.drawString("Player2 = " + Player.getPlayer2().getPoints(),500,60);                     
+            g.drawString("Player2 = " + Player.getPlayer2().getPoints(),700,60);                     
             
             if (Player.getCurrentPlayer()== Player.getPlayer1())
             {
-            g.setColor(Color.RED);
-            g.setFont(new Font("Arial",Font.BOLD,15));
+            g.setColor(Color.white);
+            g.setFont(new Font("Arial",Font.BOLD,25));
             g.drawString("Player1's turn",250,60);
             }
             else {
             g.setColor(Color.black);
-            g.setFont(new Font("Arial",Font.BOLD,15));
+            g.setFont(new Font("Arial",Font.BOLD,25));
             g.drawString("Player2's turn" ,250,60);   
             }
-
+            
+            g.setColor(new Color(98,53,18));
+            g.fillRect(Window.getX(230),Window.getY(75)+Window.getHeight2()/3,
+                Window.getWidth2()/2,Window.getHeight2()/9);
+            g.setColor(Color.black);
+            g.setFont(new Font("Arial",Font.BOLD,35));
+            g.drawString("ANIMACALA" ,350,350);   
+            
         if (win)
         {
             g.setColor(Color.blue);
@@ -179,6 +195,12 @@ public class Mancala extends JFrame implements Runnable {
         win = false;
         Scoops.Reset();
         Player.Reset();
+        animal = new Animal();
+        continuous = false;
+        capture = false;
+        theft = false;
+        begun = false;
+        onePlayer = false;
 
     }
 /////////////////////////////////////////////////////////////////////////
@@ -191,11 +213,10 @@ public class Mancala extends JFrame implements Runnable {
                 Window.ysize = getSize().height;
             }
             Board = Toolkit.getDefaultToolkit().getImage("./Mancala.png");
-
 //            Chicken = Toolkit.getDefaultToolkit().getImage("./Chicken.png");
 //            Panda = Toolkit.getDefaultToolkit().getImage("./Cartoon-Panda-Transparent-Image.png");
 //            Giraffe = Toolkit.getDefaultToolkit().getImage("./Giraffe.png");
-            Grass = Toolkit.getDefaultToolkit().getImage("./grass.jfif");
+            Grass = Toolkit.getDefaultToolkit().getImage("./grass.jpg");
 
             
             reset();
