@@ -16,7 +16,8 @@ public class Scoops {
         {
             for (int zx = 0;zx<NUM_COLUMNS;zx++)
             {
-                board[zi][zx] = null;
+                if (zi>0 && zi<3 && zx>0 && zx<7)
+                board[zi][zx] = new Marbles(Color.BLACK);
             }
         }
     }

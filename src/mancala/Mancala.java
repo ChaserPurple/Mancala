@@ -56,7 +56,6 @@ public class Mancala extends JFrame implements Runnable {
                 }
 
                 if (e.BUTTON3 == e.getButton()) {
-//add or modify.  Code already added for you.
                     Scoops.ChangeTokenPixel(e.getX() - Window.getX(0),
                             e.getY() - Window.getY(0));  
                 }
@@ -133,13 +132,13 @@ public class Mancala extends JFrame implements Runnable {
             return;
         }
 
-        Scoops.Draw(g);
+        
                 g.drawImage(Grass,Window.getX(0),Window.getY(0),
                 Window.getWidth2(),Window.getHeight2(),this);
         g.drawImage(Board,Window.getX(0)-40,Window.getY(2)+Window.getHeight2()/4,
                 Window.getWidth2()+70,Window.getHeight2()/2,this);
 //        Animal.draw(g);
-
+        Scoops.Draw(g);
         
             g.setColor(Color.black);
             g.setFont(new Font("Arial",Font.BOLD,25));
