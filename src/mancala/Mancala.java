@@ -161,8 +161,10 @@ public class Mancala extends JFrame implements Runnable {
             }
             
             g.setColor(new Color(98,53,18));
+
             g.fillRect(Window.getX(315),Window.getY(75)+Window.getHeight2()/3,
                 Window.getWidth2()/4+50,Window.getHeight2()/10);
+
             g.setColor(Color.black);
             g.setFont(new Font("Arial",Font.BOLD,35));
             g.drawString("ANIMACALA" ,350,350);   
@@ -216,7 +218,7 @@ public class Mancala extends JFrame implements Runnable {
 //            Chicken = Toolkit.getDefaultToolkit().getImage("./Chicken.png");
 //            Panda = Toolkit.getDefaultToolkit().getImage("./Cartoon-Panda-Transparent-Image.png");
 //            Giraffe = Toolkit.getDefaultToolkit().getImage("./Giraffe.png");
-            Grass = Toolkit.getDefaultToolkit().getImage("./grass.jfif");
+            Grass = Toolkit.getDefaultToolkit().getImage("./cartoon-grass-8.jpg");
 
             
             reset();
