@@ -16,12 +16,15 @@ public class Scoops {
         {
             for (int zx = 0;zx<NUM_COLUMNS;zx++)
             {
-<<<<<<< HEAD
+
                 board[zi][zx] = board[1][2];
-=======
+
                 if (zi>0 && zi<3 && zx>0 && zx<7)
                 board[zi][zx] = new Marbles(Color.BLACK);
->>>>>>> 2f08a9aeb2743e55631d5788bde57385dccb09eb
+
+                if (zi>0 && zi<3 && zx>0 && zx<7)
+                board[zi][zx] = new Marbles(Color.BLACK);
+
             }
         }
     }

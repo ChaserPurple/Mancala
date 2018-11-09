@@ -55,6 +55,7 @@ public class Drawing {
         g.fillRect(Window.getX(405),Window.getY(200),140,40);
         g.setColor(new Color(18,255,10));
         g.fillRect(Window.getX(555),Window.getY(200),140,40);
+
         
         //Decide Player
         g.setColor(new Color(18,255,10));
@@ -73,9 +74,24 @@ public class Drawing {
         g.drawString("Theft",Window.getX(590),Window.getY(230));
         g.setColor(Color.red);
         g.setFont(new Font("Arial",Font.PLAIN,50));
+
+        
+        //Decide Player
+        g.setColor(new Color(18,255,10));
+        g.fillRect(Window.getX(330),Window.getY(270),140,40);
+        g.setColor(new Color(18,255,10));
+        g.fillRect(Window.getX(480),Window.getY(270),140,40);
+        
+        g.setColor(Color.white);
+        g.setFont(new Font("Times New Roman",Font.ITALIC,50));
+
         g.drawString("ANIMACALA",Window.getX(100),Window.getY(150));
-        g.setFont(new Font("Arial",Font.PLAIN,40));
-        g.drawString("PLAY",Window.getX(375),Window.getY(440));
+        g.setFont(new Font("Times New Roman",Font.ITALIC,30));
+        g.drawString("READY",Window.getX(425),Window.getY(435));
+        
+        g.drawString("Capture",Window.getX(270),Window.getY(230));
+        g.drawString("Continuous",Window.getX(405),Window.getY(230));
+        g.drawString("Theft",Window.getX(590),Window.getY(230));
         
         g.drawString("1 Player",Window.getX(350),Window.getY(300));
         g.drawString("2 Player",Window.getX(500),Window.getY(300));

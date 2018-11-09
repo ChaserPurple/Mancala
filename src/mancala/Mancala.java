@@ -136,12 +136,7 @@ public class Mancala extends JFrame implements Runnable {
             return;
         }
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-        
-=======
->>>>>>> 2f08a9aeb2743e55631d5788bde57385dccb09eb
+
         if(begun){
             Scoops.Draw(g);
             g.drawImage(Grass,Window.getX(0),Window.getY(0),Window.getWidth2(),Window.getHeight2(),this);
@@ -175,7 +170,7 @@ public class Mancala extends JFrame implements Runnable {
                 g.setFont(new Font("Arial",Font.PLAIN,45));
                 g.drawString("WIN",50,200);         
         Scoops.Draw(g);
->>>>>>> 9db1122a8d024b5ebc9d69e292302c6406ff558f
+
                 g.drawImage(Grass,Window.getX(0),Window.getY(0),
                 Window.getWidth2(),Window.getHeight2(),this);
         g.drawImage(Board,Window.getX(0)-40,Window.getY(2)+Window.getHeight2()/4,
@@ -204,16 +199,12 @@ public class Mancala extends JFrame implements Runnable {
             
             g.setColor(new Color(98,53,18));
 
-<<<<<<< HEAD
-<<<<<<< HEAD
+
             g.fillRect(Window.getX(230),Window.getY(75)+Window.getHeight2()/3,
                 Window.getWidth2()/2,Window.getHeight2()/9);
 
 
-=======
->>>>>>> 9db1122a8d024b5ebc9d69e292302c6406ff558f
-=======
->>>>>>> 2f08a9aeb2743e55631d5788bde57385dccb09eb
+
             g.fillRect(Window.getX(315),Window.getY(75)+Window.getHeight2()/3,
                 Window.getWidth2()/4+50,Window.getHeight2()/10);
 
