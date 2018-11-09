@@ -98,6 +98,17 @@ public class Scoops {
             g.drawLine(Window.getX(zi*xdelta),Window.getY(0),
                     Window.getX(zi*xdelta),Window.getY(Window.getHeight2()));
         }
+        for (int row=0;row<NUM_ROWS;row++)
+        {
+            for (int col=0;col<NUM_COLUMNS;col++)
+            {
+                if (board[row][col]!= null)
+                    board[row][col].draw(g, row, col, xdelta, ydelta);
+              
+            }            
+            
+        }
+        
     }
     public static boolean CheckWin(){    
         for (int row=0;row<NUM_ROWS;row++)
