@@ -39,8 +39,8 @@ public class Drawing {
         g.setColor(new Color(18,69,10));
         g.fillRect(Window.getX(0),Window.getY(0),Window.getWidth2(),Window.getHeight2());
         
-        g.setColor(Color.white);
-        g.fillRect(Window.getX(395),Window.getY(400),150,50);
+//        g.setColor(Color.white);
+//        g.fillRect(Window.getX(395),Window.getY(400),150,50);
         
         
         

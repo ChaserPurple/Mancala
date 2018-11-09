@@ -38,8 +38,6 @@ public class Mancala extends JFrame implements Runnable {
     public Mancala() {
         addMouseListener(new MouseAdapter() {
             public void mousePressed(MouseEvent e) {
-                
-   
                 if (win)
                     return;
                 
@@ -168,7 +166,7 @@ public class Mancala extends JFrame implements Runnable {
                 g.setFont(new Font("Arial",Font.PLAIN,45));
                 g.drawString("WIN",50,200);         
         Scoops.Draw(g);
-                g.drawImage(Grass,Window.getX(0),Window.getY(0),
+g.drawImage(Grass,Window.getX(0),Window.getY(0),
                 Window.getWidth2(),Window.getHeight2(),this);
         g.drawImage(Board,Window.getX(0)-40,Window.getY(2)+Window.getHeight2()/4,
                 Window.getWidth2()+70,Window.getHeight2()/2,this);
@@ -212,7 +210,8 @@ public class Mancala extends JFrame implements Runnable {
             g.drawString("WIN",50,200);         
         }}
         }
-        gOld.drawImage(image, 0, 0, null);
+
+                gOld.drawImage(image, 0, 0, null);
     }
 ////////////////////////////////////////////////////////////////////////////
 // needed for     implement runnable
