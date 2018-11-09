@@ -29,6 +29,7 @@ public class Mancala extends JFrame implements Runnable {
     
 
     public static void main(String[] args) {
+        System.out.println("Testing...");
         Mancala frame = new Mancala();
         frame.setSize(Window.WINDOW_WIDTH, Window.WINDOW_HEIGHT);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
