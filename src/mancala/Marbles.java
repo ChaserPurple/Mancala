@@ -20,6 +20,9 @@ public class Marbles {
         g.setFont(new Font("Arial",Font.PLAIN,30));
         g.drawString("" + value,Window.getX(column*xdelta+34),Window.getY(row*ydelta+50));            
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> 5555325f97c07c4ceecb3585437c2541cb13d655
+=======
 >>>>>>> 5555325f97c07c4ceecb3585437c2541cb13d655
 =======
 >>>>>>> 5555325f97c07c4ceecb3585437c2541cb13d655

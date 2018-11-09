@@ -164,9 +164,12 @@ public class Mancala extends JFrame implements Runnable {
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             g.fillRect(Window.getX(230),Window.getY(75)+Window.getHeight2()/3,
                 Window.getWidth2()/2,Window.getHeight2()/9);
 
+=======
+>>>>>>> 5555325f97c07c4ceecb3585437c2541cb13d655
 =======
 >>>>>>> 5555325f97c07c4ceecb3585437c2541cb13d655
 =======
