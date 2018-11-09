@@ -16,7 +16,7 @@ public class Scoops {
         {
             for (int zx = 0;zx<NUM_COLUMNS;zx++)
             {
-                board[zi][zx] = null;
+                board[zi][zx] = board[1][2];
             }
         }
     }
