@@ -16,8 +16,7 @@ public class Marbles {
         g.fillOval(Window.getX(column*xdelta),Window.getY(row*ydelta),xdelta,ydelta);   
         g.setColor(Color.white);
         g.setFont(new Font("Arial",Font.PLAIN,30));
-        g.drawString("" + value,Window.getX(column*xdelta+34),Window.getY(row*ydelta+50));                     
-        
+        g.drawString("" + value,Window.getX(column*xdelta+34),Window.getY(row*ydelta+50));            
     }    
     
     public int getValue() {
