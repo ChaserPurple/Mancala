@@ -71,6 +71,11 @@ public class Drawing {
         g.drawString("Capture",Window.getX(270),Window.getY(230));
         g.drawString("Continuous",Window.getX(405),Window.getY(230));
         g.drawString("Theft",Window.getX(590),Window.getY(230));
+        g.setColor(Color.red);
+        g.setFont(new Font("Arial",Font.PLAIN,50));
+        g.drawString("ANIMACALA",Window.getX(100),Window.getY(150));
+        g.setFont(new Font("Arial",Font.PLAIN,40));
+        g.drawString("PLAY",Window.getX(375),Window.getY(440));
         
         g.drawString("1 Player",Window.getX(350),Window.getY(300));
         g.drawString("2 Player",Window.getX(500),Window.getY(300));

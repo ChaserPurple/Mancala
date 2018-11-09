@@ -203,7 +203,9 @@ public class Mancala extends JFrame implements Runnable {
 
             g.setColor(Color.black);
             g.setFont(new Font("Arial",Font.BOLD,35));
-            g.drawString("ANIMACALA" ,350,350);   
+            g.drawString("ANIMACALA" ,350,350); 
+            
+            
             
         if (win)
         {
