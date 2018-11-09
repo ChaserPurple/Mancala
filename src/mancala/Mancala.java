@@ -161,8 +161,13 @@ public class Mancala extends JFrame implements Runnable {
             }
             
             g.setColor(new Color(98,53,18));
+<<<<<<< HEAD
             g.fillRect(Window.getX(230),Window.getY(75)+Window.getHeight2()/3,
                 Window.getWidth2()/2,Window.getHeight2()/9);
+=======
+            g.fillRect(Window.getX(315),Window.getY(75)+Window.getHeight2()/3,
+                Window.getWidth2()/4+50,Window.getHeight2()/10);
+>>>>>>> f50d2af8943246926154f6e0caee52ac507bc3f3
             g.setColor(Color.black);
             g.setFont(new Font("Arial",Font.BOLD,35));
             g.drawString("ANIMACALA" ,350,350);   
