@@ -133,10 +133,14 @@ public class Mancala extends JFrame implements Runnable {
             gOld.drawImage(image, 0, 0, null);
             return;
         }
+<<<<<<< HEAD
 
 
 
 //        if(begun){
+=======
+        if(begun){
+>>>>>>> 3acfc92c17f79c16a7552a3d5e73208e01cdcdea
             Scoops.Draw(g);
             g.drawImage(Grass,Window.getX(0),Window.getY(0),Window.getWidth2(),Window.getHeight2(),this);
             g.drawImage(Board,Window.getX(0)-40,Window.getY(2)+Window.getHeight2()/4,
@@ -169,8 +173,7 @@ public class Mancala extends JFrame implements Runnable {
                 g.setFont(new Font("Arial",Font.PLAIN,45));
                 g.drawString("WIN",50,200);         
         Scoops.Draw(g);
-
-                g.drawImage(Grass,Window.getX(0),Window.getY(0),
+g.drawImage(Grass,Window.getX(0),Window.getY(0),
                 Window.getWidth2(),Window.getHeight2(),this);
         g.drawImage(Board,Window.getX(0)-40,Window.getY(2)+Window.getHeight2()/4,
                 Window.getWidth2()+70,Window.getHeight2()/2,this);
@@ -212,10 +215,14 @@ public class Mancala extends JFrame implements Runnable {
             g.setColor(Color.blue);
             g.setFont(new Font("Arial",Font.PLAIN,45));
             g.drawString("WIN",50,200);         
+        }}
         }
 
+<<<<<<< HEAD
 //    }
         //}
+=======
+>>>>>>> 3acfc92c17f79c16a7552a3d5e73208e01cdcdea
                 gOld.drawImage(image, 0, 0, null);
     }
 ////////////////////////////////////////////////////////////////////////////
