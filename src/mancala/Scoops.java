@@ -62,7 +62,6 @@ public class Scoops {
            ypixel > Window.getHeight2())
             return;
         
-
         int currRow = 0;
         int ydelta = Window.getHeight2()/NUM_ROWS;
         int currYVal = ydelta;
@@ -80,17 +79,44 @@ public class Scoops {
             currCol++;
             currXVal += xdelta;
         }
-        board[currRow][currCol] = null;
         if (Player.getCurrentPlayer()==Player.getPlayer1()){
-            for (int zx = currCol;zx<NUM_COLUMNS;zx++)
-            {
-                if (zx>0 && zx<7){
+                for (int zx = currCol;zx<board[currRow][currCol].getVal()+1;zx++)
+                {
+                    if (zx>0 && zx<7){
+                        if (board[currRow][zx] != null)
+                        board[currRow][zx].addVal();
+                    }
                 }
             }
+            else {
+                for (int zx = currCol;zx<board[currRow][currCol].getVal()+1;zx--)
+                {
+                    if (zx>0 && zx<7){
+                        if (board[currRow][zx] != null)
+                        board[currRow][zx].addVal();
+                    }
+                }
+            }
+        if (Player.getCurrentPlayer()==Player.getPlayer1()){
+            if (currRow == 2){
+                board[currRow][currCol] = null;
+            }
+            else {
+                return;
+            }
         }
-        else {
+        if (Player.getCurrentPlayer()==Player.getPlayer2())
+        {
+            if (currRow == 1){
+                board[currRow][currCol] = null;
+            }
+            else {
+                return;
+            }
             
         }
+            
+        
     }
        
     public static void Draw(Graphics2D g) {

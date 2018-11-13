@@ -3,7 +3,7 @@ package mancala;
 import java.awt.*;
 public class Marbles {
     private Color color;
-private int value;
+    private int value;
 
 Marbles(Color _color){
         color = _color;
@@ -17,7 +17,14 @@ Marbles(Color _color){
         g.setFont(new Font("Arial",Font.PLAIN,30));
         g.drawString("" + value,Window.getX(column*xdelta+xdelta/2-10),Window.getY(row*ydelta+ydelta/2+10));          
         
-    }    
+    }  
+    public void addVal(){
+       value ++;
+    }
+    public int getVal(){
+       return value ;
+    }
+
     
     public Color getColor(){
         return (color);
