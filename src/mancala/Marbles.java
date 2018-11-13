@@ -19,7 +19,6 @@ Marbles(Color _color){
         g.fillOval(Window.getX(column*xdelta),Window.getY(row*ydelta),xdelta/4,ydelta/4);   
     }    
     
-
     public Color getColor(){
         return (color);
     }
