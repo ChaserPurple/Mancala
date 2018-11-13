@@ -55,9 +55,7 @@ public class Mancala extends JFrame implements Runnable {
 //                    if (win) {
 //                        Player.getOtherPlayer().addPoints(Scoops.GetPoints());
 //                    }
-<<<<<<< HEAD
-                    
-=======
+
 
 
                 }
@@ -66,7 +64,6 @@ public class Mancala extends JFrame implements Runnable {
 //                    Scoops.ChangeTokenPixel(e.getX() - Window.getX(0),e.getY() - Window.getY(0));  
 
                     Scoops.ChangeTokenPixel(e.getX() - Window.getX(0),e.getY() - Window.getY(0));  
->>>>>>> 36924cffe05d035ff5487b8a08c0b992b7743d80
                 }
 
                 if (e.BUTTON3 == e.getButton()) {
@@ -149,40 +146,21 @@ public class Mancala extends JFrame implements Runnable {
         g.drawPolyline(x, y, 5);
 
 
-<<<<<<< HEAD
         if(!Drawing.getBegun()){
             Drawing.drawScreen();
         }
-=======
 
 //        if(!begun){
 //            Drawing.drawScreen();
 //        }
 
-        if(!Drawing.getBegun()){
-            Drawing.drawScreen();
-        }
-
-
-        if(!Drawing.getBegun()){
-            Drawing.drawScreen();
-        }
-        if(!Drawing.getBegun()){
-            Drawing.drawScreen();
-        }
-
->>>>>>> 36924cffe05d035ff5487b8a08c0b992b7743d80
         
         if (animateFirstTime) {
             gOld.drawImage(image, 0, 0, null);
             return;
         }
-<<<<<<< HEAD
-=======
-        
 
       
->>>>>>> 36924cffe05d035ff5487b8a08c0b992b7743d80
 
 
         if(Drawing.getBegun()){
@@ -322,9 +300,8 @@ public class Mancala extends JFrame implements Runnable {
                 g.setFont(new Font("Arial",Font.PLAIN,45));
                 g.drawString("WIN",50,200);         
             }
-<<<<<<< HEAD
-       }
-=======
+
+
         }
   gOld.drawImage(image, 0, 0, null);
     }
@@ -332,7 +309,7 @@ public class Mancala extends JFrame implements Runnable {
 
 
 
->>>>>>> 36924cffe05d035ff5487b8a08c0b992b7743d80
+
     
         
               
@@ -359,23 +336,14 @@ public class Mancala extends JFrame implements Runnable {
         Scoops.Reset();
         Player.Reset();
         animal = new Animal();
-<<<<<<< HEAD
-=======
 
 
         continuous = false;
         capture = false;
         theft = false;
 
-   //     begun = false;
-
-   //     begun = false;
         onePlayer = false;
 
-
-        
-
->>>>>>> 36924cffe05d035ff5487b8a08c0b992b7743d80
     }
 /////////////////////////////////////////////////////////////////////////
     public void animate() {
