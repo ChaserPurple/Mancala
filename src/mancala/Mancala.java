@@ -264,7 +264,3 @@ public class Mancala extends JFrame implements Runnable {
     }
 
 }
-
-
-
-
