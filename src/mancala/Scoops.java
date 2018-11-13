@@ -16,10 +16,17 @@ public class Scoops {
         {
             for (int zx = 0;zx<NUM_COLUMNS;zx++)
             {
+<<<<<<< HEAD
 
                 board[zi][zx] = board[1][2];
 
                 if (zi>0 && zi<3 && zx>0 && zx<7)
+                board[zi][zx] = new Marbles(Color.BLACK);
+
+                if (zi>0 && zi<3 && zx>0 && zx<7)
+=======
+                if (zi>0 && zi<3 && zx>0 && zx<7){}
+>>>>>>> a80ffc2e0c2d3e946618ca070765d672f39d5293
                 board[zi][zx] = new Marbles(Color.BLACK);
 
                 if (zi>0 && zi<3 && zx>0 && zx<7)
@@ -105,20 +112,43 @@ public class Scoops {
             g.drawLine(Window.getX(zi*xdelta),Window.getY(0),
                     Window.getX(zi*xdelta),Window.getY(Window.getHeight2()));
         }
-    }
-    public static boolean CheckWin(){    
         for (int row=0;row<NUM_ROWS;row++)
         {
             for (int col=0;col<NUM_COLUMNS;col++)
             {
-
+                if (board[row][col]!= null)
+                    board[row][col].draw(g, row, col, xdelta, ydelta);
               
             }            
             
         }
+        
+    }
+    public static boolean CheckWin(){    
+        int isDone = 0;
+        for (int zi = 0;zi<NUM_ROWS;zi++)
+        {
+            for (int zx = 0;zx<NUM_COLUMNS;zx++)
+            {
+                if (zi>0 && zi<3 && zx>0 && zx<7){
+                    if (board[zi][zx] == null){
+                        isDone ++;
+                        if (isDone == 8){
+                            return true;
+                        }
+                    }
+                }
+            }
+        }
         return (false);
     }        
-    
+    public static void Theft (boolean isTheft){
+        if (isTheft){
+            
+        }
+        else 
+            return;
+    }
     public static int GetPoints() {
         return points;
     }

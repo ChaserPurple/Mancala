@@ -8,13 +8,26 @@ import java.awt.Image;
 public class Drawing {
     private static Graphics2D g;
     private static Mancala mainClassInst;
+    private static boolean selectedMode;
+    private static boolean selectedPlayers;
+    private static boolean begun;
+    private static boolean continuous;
+    private static boolean capture;
+    private static boolean theft;
+    private static boolean onePlayer;
 
     public static void setDrawingInfo(Graphics2D _g,Mancala _mainClassInst) 
     {
+        selectedMode = false;
+        selectedPlayers = false;
+        continuous = false;
+        capture = false;
+        theft = false;
+        onePlayer = false;
         g = _g;
         mainClassInst = _mainClassInst;
     }
-////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
      public static void drawImage(Image image,int xpos,int ypos,double rot,double xscale,double yscale) 
     {
         int width = image.getWidth(mainClassInst);
@@ -29,7 +42,6 @@ public class Drawing {
         g.rotate(-rot  * Math.PI/180.0);
         g.translate(-xpos,-ypos);
     }
-    /////////////////////////////////////////////////////////////////////////
     public static void drawScreen()
     {
         Color clickedColor = new Color(19,89,28);
@@ -41,6 +53,7 @@ public class Drawing {
         
         g.setColor(Color.white);
         g.fillRect(Window.getX(395),Window.getY(400),150,50);
+<<<<<<< HEAD
         
         
         
@@ -75,6 +88,27 @@ public class Drawing {
         g.setColor(Color.red);
         g.setFont(new Font("Arial",Font.PLAIN,50));
 
+
+//        g.setColor(Color.white);
+//        g.fillRect(Window.getX(395),Window.getY(400),150,50);
+        
+        
+=======
+        g.fillRect(Window.getX(250),Window.getY(195),450,50);
+        g.fillRect(Window.getX(325),Window.getY(265),300,50);
+>>>>>>> a80ffc2e0c2d3e946618ca070765d672f39d5293
+        
+        //Ready
+        g.setColor(new Color(18,255,10));
+        g.fillRect(Window.getX(400),Window.getY(405),140,40);
+        
+        //Modes
+        g.setColor(new Color(18,255,10));
+        g.fillRect(Window.getX(255),Window.getY(200),140,40);
+        g.setColor(new Color(18,255,10));
+        g.fillRect(Window.getX(405),Window.getY(200),140,40);
+        g.setColor(new Color(18,255,10));
+        g.fillRect(Window.getX(555),Window.getY(200),140,40);
         
         //Decide Player
         g.setColor(new Color(18,255,10));
@@ -84,7 +118,10 @@ public class Drawing {
         
         g.setColor(Color.white);
         g.setFont(new Font("Times New Roman",Font.ITALIC,50));
+ 
 
+
+ 
         g.drawString("ANIMACALA",Window.getX(100),Window.getY(150));
         g.setFont(new Font("Times New Roman",Font.ITALIC,30));
         g.drawString("READY",Window.getX(425),Window.getY(435));
@@ -95,5 +132,22 @@ public class Drawing {
         
         g.drawString("1 Player",Window.getX(350),Window.getY(300));
         g.drawString("2 Player",Window.getX(500),Window.getY(300));
+    }
+////////////////////////////////////////////////////////////////////////////////
+    public static void checkReady(int x,int y)
+    { 
+        if(x >= Window.getX(400) && x <= Window.getX(540) && y >= Window.getY(405) && y <= Window.getY(445)){
+            selectedMode = true;
+        }
+        if(x >= Window.getX(400) && x <= Window.getX(540) && y >= Window.getY(405) && y <= Window.getY(445)){
+            if(selectedMode && selectedPlayers)
+                begun = true;
+            else
+                begun = false;
+        }
+    }
+////////////////////////////////////////////////////////////////////////////////
+    public static boolean getBegun(){
+        return begun;
     }
 }
