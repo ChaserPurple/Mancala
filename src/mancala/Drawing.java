@@ -11,11 +11,19 @@ public class Drawing {
     private static boolean selectedMode;
     private static boolean selectedPlayers;
     private static boolean begun;
+    private static boolean continuous;
+    private static boolean capture;
+    private static boolean theft;
+    private static boolean onePlayer;
 
     public static void setDrawingInfo(Graphics2D _g,Mancala _mainClassInst) 
     {
         selectedMode = false;
         selectedPlayers = false;
+        continuous = false;
+        capture = false;
+        theft = false;
+        onePlayer = false;
         g = _g;
         mainClassInst = _mainClassInst;
     }
@@ -80,10 +88,20 @@ public class Drawing {
         g.drawString("2 Player",Window.getX(500),Window.getY(300));
     }
 ////////////////////////////////////////////////////////////////////////////////
-    public static boolean checkReady(int x,int y){
-        if(selectedMode && selectedPlayers)
-            return true;
-        else
-            return false;
+    public static void checkReady(int x,int y)
+    { 
+        if(x >= Window.getX(400) && x <= Window.getX(540) && y >= Window.getY(405) && y <= Window.getY(445)){
+            selectedMode = true;
+        }
+        if(x >= Window.getX(400) && x <= Window.getX(540) && y >= Window.getY(405) && y <= Window.getY(445)){
+            if(selectedMode && selectedPlayers)
+                begun = true;
+            else
+                begun = false;
+        }
+    }
+////////////////////////////////////////////////////////////////////////////////
+    public static boolean getBegun(){
+        return begun;
     }
 }
