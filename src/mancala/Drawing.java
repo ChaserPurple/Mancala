@@ -9,7 +9,6 @@ public class Drawing {
     private static Graphics2D g;
     private static Mancala mainClassInst;
     private static boolean selectedMode;
-    private static boolean selectedPlayers;
     private static boolean begun;
     private static boolean continuous;
     private static boolean capture;
@@ -19,11 +18,10 @@ public class Drawing {
     public static void setDrawingInfo(Graphics2D _g,Mancala _mainClassInst) 
     {
         selectedMode = false;
-        selectedPlayers = false;
         continuous = false;
         capture = false;
         theft = false;
-        onePlayer = false;
+        onePlayer = true;
         g = _g;
         mainClassInst = _mainClassInst;
     }
@@ -44,11 +42,8 @@ public class Drawing {
     }
     public static void drawScreen()
     {
-        Color clickedColor = new Color(19,89,28);
-        Color unClickedColor = new Color(19,89,28);
-        
         //CHANGE TO GRASS
-        g.setColor(new Color(18,69,10));
+        g.setColor(new Color(98,53,18));
         g.fillRect(Window.getX(0),Window.getY(0),Window.getWidth2(),Window.getHeight2());
         
         g.setColor(Color.white);
@@ -57,21 +52,29 @@ public class Drawing {
         g.fillRect(Window.getX(325),Window.getY(265),300,50);
         
         //Ready
-        g.setColor(new Color(18,255,10));
+        g.setColor(new Color(54,134,40));
         g.fillRect(Window.getX(400),Window.getY(405),140,40);
         
-        //Modes
-        g.setColor(new Color(18,255,10));
+        //Modes 
+        if(capture)
+            g.setColor(new Color(20,49,15));
         g.fillRect(Window.getX(255),Window.getY(200),140,40);
-        g.setColor(new Color(18,255,10));
+        g.setColor(new Color(54,134,40));
+        if(continuous)
+            g.setColor(new Color(20,49,15));
         g.fillRect(Window.getX(405),Window.getY(200),140,40);
-        g.setColor(new Color(18,255,10));
+        g.setColor(new Color(54,134,40));
+        if(theft)
+            g.setColor(new Color(20,49,15));
         g.fillRect(Window.getX(555),Window.getY(200),140,40);
-        
+        g.setColor(new Color(54,134,40));
         //Decide Player
-        g.setColor(new Color(18,255,10));
+        if(onePlayer)
+            g.setColor(new Color(20,49,15));
         g.fillRect(Window.getX(330),Window.getY(270),140,40);
-        g.setColor(new Color(18,255,10));
+        g.setColor(new Color(54,134,40));
+        if(!onePlayer)
+            g.setColor(new Color(20,49,15));
         g.fillRect(Window.getX(480),Window.getY(270),140,40);
         
         g.setColor(Color.white);
@@ -93,24 +96,29 @@ public class Drawing {
         if(x >= Window.getX(255) && x <= Window.getX(395) && y >= Window.getY(200) && y <= Window.getY(240)){
             selectedMode = true;
             capture = true;
+            continuous = false;
+            theft = false;
         }
         else if(x >= Window.getX(405) && x <= Window.getX(545) && y >= Window.getY(200) && y <= Window.getY(240)){
             selectedMode = true;
             continuous = true;
+            theft = false;
+            capture = false;
         }
         else if(x >= Window.getX(555) && x <= Window.getX(695) && y >= Window.getY(200) && y <= Window.getY(240)){
             selectedMode = true;
             theft = true;
+            continuous = false;
+            capture = false;
         }
         else if(x >= Window.getX(330) && x <= Window.getX(470) && y >= Window.getY(270) && y <= Window.getY(310)){
-            selectedPlayers = true;
             onePlayer = true;
         }
         else if(x >= Window.getX(480) && x <= Window.getX(620) && y >= Window.getY(270) && y <= Window.getY(310)){
-            selectedPlayers = true;
+            onePlayer = false;
         }
         else if(x >= Window.getX(400) && x <= Window.getX(540) && y >= Window.getY(405) && y <= Window.getY(445)){
-            if(selectedMode && selectedPlayers)
+            if(selectedMode)
                 begun = true;
             else
                 begun = false;
@@ -120,5 +128,17 @@ public class Drawing {
 ////////////////////////////////////////////////////////////////////////////////
     public static boolean getBegun(){
         return begun;
+    }
+    public static boolean getCapture(){
+        return capture;
+    }
+    public static boolean getContinuous(){
+        return continuous;
+    }
+    public static boolean getTheft(){
+        return theft;
+    }
+    public static boolean getPlayers(){
+        return onePlayer;
     }
 }
