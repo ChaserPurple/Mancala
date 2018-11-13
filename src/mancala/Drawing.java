@@ -52,14 +52,27 @@ public class Drawing {
         g.fillRect(Window.getX(0),Window.getY(0),Window.getWidth2(),Window.getHeight2());
         
         g.setColor(Color.white);
+
+
+        
+        
+
+        g.fillRect(Window.getX(250),Window.getY(195),450,50);
+        g.fillRect(Window.getX(325),Window.getY(265),300,50);
+
+
         g.fillRect(Window.getX(395),Window.getY(400),150,50);
-<<<<<<< HEAD
-        
-        
+        g.fillRect(Window.getX(250),Window.getY(195),450,50);
+        g.fillRect(Window.getX(325),Window.getY(265),300,50);
+
+        g.fillRect(Window.getX(395),Window.getY(400),150,50);
+        g.fillRect(Window.getX(250),Window.getY(195),450,50);
+        g.fillRect(Window.getX(325),Window.getY(265),300,50);
         
         //Ready
         g.setColor(new Color(18,255,10));
         g.fillRect(Window.getX(400),Window.getY(405),140,40);
+
         
         //Modes
         g.setColor(new Color(18,255,10));
@@ -93,10 +106,10 @@ public class Drawing {
 //        g.fillRect(Window.getX(395),Window.getY(400),150,50);
         
         
-=======
+
         g.fillRect(Window.getX(250),Window.getY(195),450,50);
         g.fillRect(Window.getX(325),Window.getY(265),300,50);
->>>>>>> a80ffc2e0c2d3e946618ca070765d672f39d5293
+
         
         //Ready
         g.setColor(new Color(18,255,10));
@@ -109,7 +122,37 @@ public class Drawing {
         g.fillRect(Window.getX(405),Window.getY(200),140,40);
         g.setColor(new Color(18,255,10));
         g.fillRect(Window.getX(555),Window.getY(200),140,40);
+
         
+        //Modes
+        g.setColor(new Color(18,255,10));
+        g.fillRect(Window.getX(255),Window.getY(200),140,40);
+        g.setColor(new Color(18,255,10));
+        g.fillRect(Window.getX(405),Window.getY(200),140,40);
+        g.setColor(new Color(18,255,10));
+        g.fillRect(Window.getX(555),Window.getY(200),140,40);
+       
+
+        
+        //Modes
+        g.setColor(new Color(18,255,10));
+        g.fillRect(Window.getX(255),Window.getY(200),140,40);
+        g.setColor(new Color(18,255,10));
+        g.fillRect(Window.getX(405),Window.getY(200),140,40);
+        g.setColor(new Color(18,255,10));
+        g.fillRect(Window.getX(555),Window.getY(200),140,40);
+        
+
+        
+        //Modes
+        g.setColor(new Color(18,255,10));
+        g.fillRect(Window.getX(255),Window.getY(200),140,40);
+        g.setColor(new Color(18,255,10));
+        g.fillRect(Window.getX(405),Window.getY(200),140,40);
+        g.setColor(new Color(18,255,10));
+        g.fillRect(Window.getX(555),Window.getY(200),140,40);
+        
+
         //Decide Player
         g.setColor(new Color(18,255,10));
         g.fillRect(Window.getX(330),Window.getY(270),140,40);
@@ -118,10 +161,22 @@ public class Drawing {
         
         g.setColor(Color.white);
         g.setFont(new Font("Times New Roman",Font.ITALIC,50));
+
+ 
  
 
 
  
+        g.drawString("ANIMACALA",Window.getX(100),Window.getY(150));
+        g.setFont(new Font("Times New Roman",Font.ITALIC,30));
+        g.drawString("READY",Window.getX(425),Window.getY(435));
+        
+        g.drawString("Capture",Window.getX(270),Window.getY(230));
+        g.drawString("Continuous",Window.getX(405),Window.getY(230));
+        g.drawString("Theft",Window.getX(590),Window.getY(230));
+        
+
+
         g.drawString("ANIMACALA",Window.getX(100),Window.getY(150));
         g.setFont(new Font("Times New Roman",Font.ITALIC,30));
         g.drawString("READY",Window.getX(425),Window.getY(435));
@@ -136,15 +191,46 @@ public class Drawing {
 ////////////////////////////////////////////////////////////////////////////////
     public static void checkReady(int x,int y)
     { 
+
         if(x >= Window.getX(400) && x <= Window.getX(540) && y >= Window.getY(405) && y <= Window.getY(445)){
             selectedMode = true;
         }
         if(x >= Window.getX(400) && x <= Window.getX(540) && y >= Window.getY(405) && y <= Window.getY(445)){
+
+        if(x >= Window.getX(255) && x <= Window.getX(395) && y >= Window.getY(200) && y <= Window.getY(240)){
+            selectedMode = true;
+            capture = true;
+        }
+        else if(x >= Window.getX(405) && x <= Window.getX(545) && y >= Window.getY(200) && y <= Window.getY(240)){
+            selectedMode = true;
+            continuous = true;
+        }
+        else if(x >= Window.getX(555) && x <= Window.getX(695) && y >= Window.getY(200) && y <= Window.getY(240)){
+            selectedMode = true;
+            theft = true;
+        }
+        else if(x >= Window.getX(330) && x <= Window.getX(470) && y >= Window.getY(270) && y <= Window.getY(310)){
+            selectedPlayers = true;
+            onePlayer = true;
+        }
+        else if(x >= Window.getX(480) && x <= Window.getX(620) && y >= Window.getY(270) && y <= Window.getY(310)){
+            selectedPlayers = true;
+        }
+        else if(x >= Window.getX(400) && x <= Window.getX(540) && y >= Window.getY(405) && y <= Window.getY(445)){
+
             if(selectedMode && selectedPlayers)
                 begun = true;
             else
                 begun = false;
         }
+
+ 
+
+        begun = true;
+
+
+
+    }
     }
 ////////////////////////////////////////////////////////////////////////////////
     public static boolean getBegun(){

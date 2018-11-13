@@ -16,22 +16,21 @@ public class Scoops {
         {
             for (int zx = 0;zx<NUM_COLUMNS;zx++)
             {
-<<<<<<< HEAD
 
                 board[zi][zx] = board[1][2];
 
-                if (zi>0 && zi<3 && zx>0 && zx<7)
-                board[zi][zx] = new Marbles(Color.BLACK);
 
-                if (zi>0 && zi<3 && zx>0 && zx<7)
-=======
+
                 if (zi>0 && zi<3 && zx>0 && zx<7){}
->>>>>>> a80ffc2e0c2d3e946618ca070765d672f39d5293
                 board[zi][zx] = new Marbles(Color.BLACK);
 
-                if (zi>0 && zi<3 && zx>0 && zx<7)
+                if (zi>0 && zi<3 && zx>0 && zx<7){
                 board[zi][zx] = new Marbles(Color.BLACK);
+                }
 
+                if (zi>0 && zi<3 && zx>0 && zx<7){
+                board[zi][zx] = new Marbles(Color.BLACK);
+                }
             }
         }
     }
@@ -93,20 +92,49 @@ public class Scoops {
             currCol++;
             currXVal += xdelta;
         }
+        board[currRow][currCol] = null;
+        if (Player.getCurrentPlayer()==Player.getPlayer1()){
+            for (int zx = currCol;zx<NUM_COLUMNS;zx++)
+            {
+                if (zx>0 && zx<7){
+                }
+            }
+        }
+        else {
+            
+        }
     }
+       
     public static void Draw(Graphics2D g) {
 //Calculate the width and height of each board square.
         int ydelta = Window.getHeight2()/NUM_ROWS;
         int xdelta = Window.getWidth2()/NUM_COLUMNS;
         
  //Draw the grid.
-        g.setColor(Color.black);
-        for (int zi = 1;zi<NUM_ROWS;zi++)
+//        g.setColor(Color.black);
+//        for (int zi = 1;zi<NUM_ROWS;zi++)
+//        {
+//            g.drawLine(Window.getX(0),Window.getY(zi*ydelta),
+//                    Window.getX(Window.getWidth2()),Window.getY(zi*ydelta));
+//        }
+//        
+//        for (int zi = 1;zi<NUM_COLUMNS;zi++)
+//        {
+//            g.drawLine(Window.getX(zi*xdelta),Window.getY(0),
+//                    Window.getX(zi*xdelta),Window.getY(Window.getHeight2()));
+//        }
+        for (int row=0;row<NUM_ROWS;row++)
         {
-            g.drawLine(Window.getX(0),Window.getY(zi*ydelta),
-                    Window.getX(Window.getWidth2()),Window.getY(zi*ydelta));
+            for (int col=0;col<NUM_COLUMNS;col++)
+            {
+                if (board[row][col]!= null)
+                    board[row][col].draw(g, row, col, xdelta, ydelta);
+              
+            }            
+            
         }
         
+ 
         for (int zi = 1;zi<NUM_COLUMNS;zi++)
         {
             g.drawLine(Window.getX(zi*xdelta),Window.getY(0),
@@ -121,7 +149,10 @@ public class Scoops {
               
             }            
             
-        }
+
+
+    }
+ 
         
     }
     public static boolean CheckWin(){    
@@ -139,6 +170,7 @@ public class Scoops {
                     }
                 }
             }
+
         }
         return (false);
     }        
