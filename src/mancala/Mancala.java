@@ -117,26 +117,19 @@ public class Mancala extends JFrame implements Runnable {
         g.setColor(Color.red);
         g.drawPolyline(x, y, 5);
 
-<<<<<<< HEAD
-//        if(!begun){
-//            Drawing.drawScreen();
-//        }
-=======
         if(!Drawing.getBegun()){
             Drawing.drawScreen();
         }
->>>>>>> b26dce1882e31c2688f0737054f76eb623bf188d
+        if(!Drawing.getBegun()){
+            Drawing.drawScreen();
+        }
         
         if (animateFirstTime) {
             gOld.drawImage(image, 0, 0, null);
             return;
         }
         
-<<<<<<< HEAD
-//        if(begun){
-=======
         if(Drawing.getBegun()){
->>>>>>> b26dce1882e31c2688f0737054f76eb623bf188d
             Scoops.Draw(g);
             g.drawImage(Grass,Window.getX(0),Window.getY(0),Window.getWidth2(),Window.getHeight2(),this);
             g.drawImage(Board,Window.getX(0)-40,Window.getY(2)+Window.getHeight2()/4,Window.getWidth2()+70,Window.getHeight2()/2,this);
@@ -205,7 +198,7 @@ public class Mancala extends JFrame implements Runnable {
                 g.setFont(new Font("Arial",Font.PLAIN,45));
                 g.drawString("WIN",50,200);         
             }
- //       }
+        }
     
         
                 gOld.drawImage(image, 0, 0, null);
@@ -231,15 +224,6 @@ public class Mancala extends JFrame implements Runnable {
         Scoops.Reset();
         Player.Reset();
         animal = new Animal();
-<<<<<<< HEAD
-        continuous = false;
-        capture = false;
-        theft = false;
-   //     begun = false;
-        onePlayer = false;
-=======
-        
->>>>>>> b26dce1882e31c2688f0737054f76eb623bf188d
 
     }
 /////////////////////////////////////////////////////////////////////////
