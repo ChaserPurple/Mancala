@@ -17,7 +17,7 @@ public class Scoops {
             for (int zx = 0;zx<NUM_COLUMNS;zx++)
             {
                 if (zi>0 && zi<3 && zx>0 && zx<7){}
-//                board[zi][zx] = new Marbles(Color.BLACK);
+                board[zi][zx] = new Marbles(Color.BLACK);
             }
         }
     }
@@ -111,18 +111,30 @@ public class Scoops {
         
     }
     public static boolean CheckWin(){    
-        for (int row=0;row<NUM_ROWS;row++)
+        int isDone = 0;
+        for (int zi = 0;zi<NUM_ROWS;zi++)
         {
-            for (int col=0;col<NUM_COLUMNS;col++)
+            for (int zx = 0;zx<NUM_COLUMNS;zx++)
             {
-
-              
-            }            
-            
+                if (zi>0 && zi<3 && zx>0 && zx<7){
+                    if (board[zi][zx] == null){
+                        isDone ++;
+                        if (isDone == 8){
+                            return true;
+                        }
+                    }
+                }
+            }
         }
         return (false);
     }        
-    
+    public static void Theft (boolean isTheft){
+        if (isTheft){
+            
+        }
+        else 
+            return;
+    }
     public static int GetPoints() {
         return points;
     }
