@@ -83,16 +83,18 @@ public class Scoops {
         if (Player.getCurrentPlayer()==Player.getPlayer1()){
                 for (int zx = currCol;zx<board[currRow][currCol].getVal()+1;zx++)
                 {
-                    if (zx>0 && zx<7){
+                    if (zx>0 && zx<7 && currRow ==2){
                         if (board[currRow][zx] != null)
                         board[currRow][zx].addVal();
+                        
                     }
                 }
+
             }
             else {
                 for (int zx = currCol;zx<board[currRow][currCol].getVal()+1;zx--)
                 {
-                    if (zx>0 && zx<7){
+                    if (zx>0 && zx<7 && currRow ==1){
                         if (board[currRow][zx] != null)
                         board[currRow][zx].addVal();
                     }
