@@ -44,10 +44,8 @@ public class Mancala extends JFrame implements Runnable {
                     int xpos = e.getX();
                     int ypos = e.getY();
 //                    Scoops.AddTokenPixel(xpos - Window.getX(0),ypos - Window.getY(0));  
-                    if(Window.getX(540) >= xpos && xpos >= Window.getX(400) && Window.getY(445) >= ypos && ypos >= Window.getY(405)){
-                        if(Drawing.checkReady(xpos, ypos))
-                            begun = true;
-                    }
+                    if(Drawing.checkReady(xpos, ypos))
+                        begun = true;
 //                    win = Scoops.CheckWin();
 //                    if (win) {
 //                        Player.getOtherPlayer().addPoints(Scoops.GetPoints());
