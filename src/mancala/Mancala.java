@@ -21,10 +21,6 @@ public class Mancala extends JFrame implements Runnable {
     int mostRecentRow;
     int mostRecentCol;
     boolean win;
-    public static boolean continuous;
-    public static boolean capture;
-    public static boolean theft;
-    public static boolean onePlayer;
     
 
     public static void main(String[] args) {
@@ -121,16 +117,26 @@ public class Mancala extends JFrame implements Runnable {
         g.setColor(Color.red);
         g.drawPolyline(x, y, 5);
 
+<<<<<<< HEAD
 //        if(!begun){
 //            Drawing.drawScreen();
 //        }
+=======
+        if(!Drawing.getBegun()){
+            Drawing.drawScreen();
+        }
+>>>>>>> b26dce1882e31c2688f0737054f76eb623bf188d
         
         if (animateFirstTime) {
             gOld.drawImage(image, 0, 0, null);
             return;
         }
         
+<<<<<<< HEAD
 //        if(begun){
+=======
+        if(Drawing.getBegun()){
+>>>>>>> b26dce1882e31c2688f0737054f76eb623bf188d
             Scoops.Draw(g);
             g.drawImage(Grass,Window.getX(0),Window.getY(0),Window.getWidth2(),Window.getHeight2(),this);
             g.drawImage(Board,Window.getX(0)-40,Window.getY(2)+Window.getHeight2()/4,Window.getWidth2()+70,Window.getHeight2()/2,this);
@@ -225,11 +231,15 @@ public class Mancala extends JFrame implements Runnable {
         Scoops.Reset();
         Player.Reset();
         animal = new Animal();
+<<<<<<< HEAD
         continuous = false;
         capture = false;
         theft = false;
    //     begun = false;
         onePlayer = false;
+=======
+        
+>>>>>>> b26dce1882e31c2688f0737054f76eb623bf188d
 
     }
 /////////////////////////////////////////////////////////////////////////
