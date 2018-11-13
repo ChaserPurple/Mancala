@@ -90,16 +90,32 @@ public class Drawing {
 ////////////////////////////////////////////////////////////////////////////////
     public static void checkReady(int x,int y)
     { 
-        if(x >= Window.getX(400) && x <= Window.getX(540) && y >= Window.getY(405) && y <= Window.getY(445)){
+        if(x >= Window.getX(255) && x <= Window.getX(395) && y >= Window.getY(200) && y <= Window.getY(240)){
             selectedMode = true;
+            capture = true;
         }
-        if(x >= Window.getX(400) && x <= Window.getX(540) && y >= Window.getY(405) && y <= Window.getY(445)){
+        else if(x >= Window.getX(405) && x <= Window.getX(545) && y >= Window.getY(200) && y <= Window.getY(240)){
+            selectedMode = true;
+            continuous = true;
+        }
+        else if(x >= Window.getX(555) && x <= Window.getX(695) && y >= Window.getY(200) && y <= Window.getY(240)){
+            selectedMode = true;
+            theft = true;
+        }
+        else if(x >= Window.getX(330) && x <= Window.getX(470) && y >= Window.getY(270) && y <= Window.getY(310)){
+            selectedPlayers = true;
+            onePlayer = true;
+        }
+        else if(x >= Window.getX(480) && x <= Window.getX(620) && y >= Window.getY(270) && y <= Window.getY(310)){
+            selectedPlayers = true;
+        }
+        else if(x >= Window.getX(400) && x <= Window.getX(540) && y >= Window.getY(405) && y <= Window.getY(445)){
             if(selectedMode && selectedPlayers)
                 begun = true;
             else
                 begun = false;
         }
-        begun = true;
+//        begun = true;
     }
 ////////////////////////////////////////////////////////////////////////////////
     public static boolean getBegun(){
