@@ -8,13 +8,17 @@ import java.awt.Image;
 public class Drawing {
     private static Graphics2D g;
     private static Mancala mainClassInst;
+    private static boolean selectedMode = false;
+    private static boolean selectedPlayers = false;
 
     public static void setDrawingInfo(Graphics2D _g,Mancala _mainClassInst) 
     {
+        selectedMode = false;
+        selectedPlayers = false;
         g = _g;
         mainClassInst = _mainClassInst;
     }
-////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
      public static void drawImage(Image image,int xpos,int ypos,double rot,double xscale,double yscale) 
     {
         int width = image.getWidth(mainClassInst);
@@ -29,7 +33,6 @@ public class Drawing {
         g.rotate(-rot  * Math.PI/180.0);
         g.translate(-xpos,-ypos);
     }
-    /////////////////////////////////////////////////////////////////////////
     public static void drawScreen()
     {
         Color clickedColor = new Color(19,89,28);
@@ -74,5 +77,16 @@ public class Drawing {
         
         g.drawString("1 Player",Window.getX(350),Window.getY(300));
         g.drawString("2 Player",Window.getX(500),Window.getY(300));
+    }
+////////////////////////////////////////////////////////////////////////////////
+    public static boolean checkReady(int x,int y){
+//        boolean selectedMode = false;
+//        boolean selectedPlayers = false;
+//        
+//        if(selectedMode && selectedPlayers)
+//            return true;
+//        else
+//            return false;
+return true;
     }
 }
