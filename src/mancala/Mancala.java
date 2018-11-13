@@ -24,7 +24,6 @@ public class Mancala extends JFrame implements Runnable {
     public static boolean continuous;
     public static boolean capture;
     public static boolean theft;
-    public static boolean begun;
     public static boolean onePlayer;
     
 
@@ -44,8 +43,7 @@ public class Mancala extends JFrame implements Runnable {
                     int xpos = e.getX();
                     int ypos = e.getY();
 //                    Scoops.AddTokenPixel(xpos - Window.getX(0),ypos - Window.getY(0));  
-                    if(Drawing.checkReady(xpos, ypos))
-                        begun = true;
+                    Drawing.checkReady(xpos, ypos);
 //                    win = Scoops.CheckWin();
 //                    if (win) {
 //                        Player.getOtherPlayer().addPoints(Scoops.GetPoints());

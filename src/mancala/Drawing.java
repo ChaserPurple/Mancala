@@ -8,8 +8,9 @@ import java.awt.Image;
 public class Drawing {
     private static Graphics2D g;
     private static Mancala mainClassInst;
-    private static boolean selectedMode = false;
-    private static boolean selectedPlayers = false;
+    private static boolean selectedMode;
+    private static boolean selectedPlayers;
+    private static boolean begun;
 
     public static void setDrawingInfo(Graphics2D _g,Mancala _mainClassInst) 
     {
@@ -80,13 +81,9 @@ public class Drawing {
     }
 ////////////////////////////////////////////////////////////////////////////////
     public static boolean checkReady(int x,int y){
-//        boolean selectedMode = false;
-//        boolean selectedPlayers = false;
-//        
-//        if(selectedMode && selectedPlayers)
-//            return true;
-//        else
-//            return false;
-return true;
+        if(selectedMode && selectedPlayers)
+            return true;
+        else
+            return false;
     }
 }
