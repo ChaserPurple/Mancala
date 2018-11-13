@@ -17,16 +17,9 @@ public class Scoops {
             for (int zx = 0;zx<NUM_COLUMNS;zx++)
             {
 
+
                 board[zi][zx] = board[1][2];
 
-
-
-                if (zi>0 && zi<3 && zx>0 && zx<7){}
-                board[zi][zx] = new Marbles(Color.BLACK);
-
-                if (zi>0 && zi<3 && zx>0 && zx<7){
-                board[zi][zx] = new Marbles(Color.BLACK);
-                }
 
                 if (zi>0 && zi<3 && zx>0 && zx<7){
                 board[zi][zx] = new Marbles(Color.BLACK);
@@ -134,6 +127,7 @@ public class Scoops {
             
         }
         
+
  
         for (int zi = 1;zi<NUM_COLUMNS;zi++)
         {
@@ -154,6 +148,7 @@ public class Scoops {
     }
  
         
+
     }
     public static boolean CheckWin(){    
         int isDone = 0;
