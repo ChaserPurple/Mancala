@@ -99,6 +99,7 @@ public class Drawing {
             else
                 begun = false;
         }
+        begun = true;
     }
 ////////////////////////////////////////////////////////////////////////////////
     public static boolean getBegun(){
