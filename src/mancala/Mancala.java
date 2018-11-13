@@ -40,22 +40,21 @@ public class Mancala extends JFrame implements Runnable {
             public void mousePressed(MouseEvent e) {
                 if (win)
                     return;
-                
                 if (e.BUTTON1 == e.getButton() ) {
-                    e.getX();
-                    e.getY();
-                    Scoops.AddTokenPixel(e.getX() - Window.getX(0),
-                            e.getY() - Window.getY(0));  
-                    
-                    win = Scoops.CheckWin();
-                    if (win) {
-                        Player.getOtherPlayer().addPoints(Scoops.GetPoints());
+                    int xpos = e.getX();
+                    int ypos = e.getY();
+//                    Scoops.AddTokenPixel(xpos - Window.getX(0),ypos - Window.getY(0));  
+                    if(Window.getX(540) >= xpos && xpos >= Window.getX(400) && Window.getY(445) >= ypos && ypos >= Window.getY(405)){
+                        begun = true;
                     }
+//                    win = Scoops.CheckWin();
+//                    if (win) {
+//                        Player.getOtherPlayer().addPoints(Scoops.GetPoints());
+//                    }
                 }
 
                 if (e.BUTTON3 == e.getButton()) {
-                    Scoops.ChangeTokenPixel(e.getX() - Window.getX(0),
-                            e.getY() - Window.getY(0));  
+//                    Scoops.ChangeTokenPixel(e.getX() - Window.getX(0),e.getY() - Window.getY(0));  
                 }
                 repaint();
             }
@@ -125,60 +124,48 @@ public class Mancala extends JFrame implements Runnable {
         g.setColor(Color.red);
         g.drawPolyline(x, y, 5);
 
-//        if(!begun){
-//            Drawing.drawScreen();
-//        }
+        if(!begun){
+            Drawing.drawScreen();
+        }
         
         if (animateFirstTime) {
             gOld.drawImage(image, 0, 0, null);
             return;
         }
-<<<<<<< HEAD
-
-
-
-//        if(begun){
-=======
+        
         if(begun){
->>>>>>> 3acfc92c17f79c16a7552a3d5e73208e01cdcdea
             Scoops.Draw(g);
             g.drawImage(Grass,Window.getX(0),Window.getY(0),Window.getWidth2(),Window.getHeight2(),this);
-            g.drawImage(Board,Window.getX(0)-40,Window.getY(2)+Window.getHeight2()/4,
-                    Window.getWidth2()+70,Window.getHeight2()/2,this);
+            g.drawImage(Board,Window.getX(0)-40,Window.getY(2)+Window.getHeight2()/4,Window.getWidth2()+70,Window.getHeight2()/2,this);
             //animal.Draw(g);
 
 
-                if (Player.getCurrentPlayer()== Player.getPlayer1())
-                {
+            if (Player.getCurrentPlayer()== Player.getPlayer1())
+            {
                 g.setColor(Color.white);
                 g.setFont(new Font("Arial",Font.BOLD,25));
                 g.drawString("Player1's turn",250,60);
-                }
-                else {
+            }
+            else {
                 g.setColor(Color.black);
                 g.setFont(new Font("Arial",Font.BOLD,25));
                 g.drawString("Player2's turn" ,250,60);   
-                }
+            }
 
-                g.setColor(new Color(98,53,18));
-                g.fillRect(Window.getX(230),Window.getY(75)+Window.getHeight2()/3,
-                    Window.getWidth2()/2,Window.getHeight2()/9);
-                g.setColor(Color.black);
-                g.setFont(new Font("Arial",Font.BOLD,35));
-                g.drawString("ANIMACALA" ,350,350);   
+            g.setColor(new Color(98,53,18));
+            g.fillRect(Window.getX(230),Window.getY(75)+Window.getHeight2()/3,Window.getWidth2()/2,Window.getHeight2()/9);
+            g.setColor(Color.black);
+            g.setFont(new Font("Arial",Font.BOLD,35));
+            g.drawString("ANIMACALA" ,350,350);   
 
-//            if (win)
-//            {
-                g.setColor(Color.blue);
-                g.setFont(new Font("Arial",Font.PLAIN,45));
-                g.drawString("WIN",50,200);         
-        Scoops.Draw(g);
-g.drawImage(Grass,Window.getX(0),Window.getY(0),
-                Window.getWidth2(),Window.getHeight2(),this);
-        g.drawImage(Board,Window.getX(0)-40,Window.getY(2)+Window.getHeight2()/4,
-                Window.getWidth2()+70,Window.getHeight2()/2,this);
-//        Animal.draw(g);
-        Scoops.Draw(g);
+            g.setColor(Color.blue);
+            g.setFont(new Font("Arial",Font.PLAIN,45));
+            g.drawString("WIN",50,200);         
+            Scoops.Draw(g);
+            g.drawImage(Grass,Window.getX(0),Window.getY(0),Window.getWidth2(),Window.getHeight2(),this);
+            g.drawImage(Board,Window.getX(0)-40,Window.getY(2)+Window.getHeight2()/4,Window.getWidth2()+70,Window.getHeight2()/2,this);
+//            Animal.draw(g);
+            Scoops.Draw(g);
         
             g.setColor(Color.black);
             g.setFont(new Font("Arial",Font.BOLD,25));
@@ -189,20 +176,19 @@ g.drawImage(Grass,Window.getX(0),Window.getY(0),
             
             if (Player.getCurrentPlayer()== Player.getPlayer1())
             {
-            g.setColor(Color.white);
-            g.setFont(new Font("Arial",Font.BOLD,45));
-            g.drawString("Player1's turn",300,510);
+                g.setColor(Color.white);
+                g.setFont(new Font("Arial",Font.BOLD,45));
+                g.drawString("Player1's turn",300,510);
             }
             else {
-            g.setColor(Color.white);
-            g.setFont(new Font("Arial",Font.BOLD,45));
-            g.drawString("Player2's turn" ,300,175);   
+                g.setColor(Color.white);
+                g.setFont(new Font("Arial",Font.BOLD,45));
+                g.drawString("Player2's turn" ,300,175);   
             }
             
             g.setColor(new Color(98,53,18));
 
-            g.fillRect(Window.getX(315),Window.getY(75)+Window.getHeight2()/3,
-                Window.getWidth2()/4+50,Window.getHeight2()/10);
+            g.fillRect(Window.getX(315),Window.getY(75)+Window.getHeight2()/3,Window.getWidth2()/4+50,Window.getHeight2()/10);
 
             g.setColor(Color.black);
             g.setFont(new Font("Arial",Font.BOLD,35));
@@ -210,19 +196,15 @@ g.drawImage(Grass,Window.getX(0),Window.getY(0),
             
             
             
-        if (win)
-        {
-            g.setColor(Color.blue);
-            g.setFont(new Font("Arial",Font.PLAIN,45));
-            g.drawString("WIN",50,200);         
-        }}
+            if (win)
+            {
+                g.setColor(Color.blue);
+                g.setFont(new Font("Arial",Font.PLAIN,45));
+                g.drawString("WIN",50,200);         
+            }
         }
-
-<<<<<<< HEAD
-//    }
-        //}
-=======
->>>>>>> 3acfc92c17f79c16a7552a3d5e73208e01cdcdea
+    
+        
                 gOld.drawImage(image, 0, 0, null);
     }
 ////////////////////////////////////////////////////////////////////////////
