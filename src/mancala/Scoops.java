@@ -82,10 +82,12 @@ public class Scoops {
         if (Player.getCurrentPlayer()==Player.getPlayer1()){
                 for (int zx = 0;zx<board[currRow][currCol].getVal()+1;zx++)
                 {
+                    
                     if (zx>0 && zx<7 && currRow ==2){
-                        if (board[currRow][currCol] != null){
-                        board[currRow][currCol].addVal();
-                        currCol ++;
+                        int addCol = currCol;
+                        if (board[currRow][addCol] != null){
+                            board[currRow][addCol].addVal();
+                            addCol ++;
                         }
                         
                     }
@@ -95,10 +97,12 @@ public class Scoops {
             else {
                 for (int zx = 0;zx<board[currRow][currCol].getVal()+1;zx--)
                 {
+                    
                     if (zx>0 && zx<7 && currRow ==1){
-                        if (board[currRow][currCol] != null){
-                        board[currRow][currCol].addVal();
-                            currCol ++;
+                        int addCol2 = currCol;
+                        if (board[currRow][addCol2] != null){
+                        board[currRow][addCol2].addVal();
+                            addCol2 ++;
                         }
                     }
                 }
