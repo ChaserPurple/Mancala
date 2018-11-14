@@ -5,9 +5,9 @@ public class Marbles {
     private Color color;
     private int value;
 
-Marbles(Color _color){
+Marbles(Color _color, int _value){
         color = _color;
-        value = 4;
+        value = _value;
     }
     
     public void draw(Graphics2D g,int row,int column,int xdelta,int ydelta) {
