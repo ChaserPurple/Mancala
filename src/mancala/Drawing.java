@@ -117,6 +117,109 @@ public class Drawing {
         //Ready
         g.setColor(new Color(18,255,10));
         g.fillRect(Window.getX(400),Window.getY(405),140,40);
+
+        
+        //Modes
+        g.setColor(new Color(18,255,10));
+        g.fillRect(Window.getX(255),Window.getY(200),140,40);
+        g.setColor(new Color(18,255,10));
+        g.fillRect(Window.getX(405),Window.getY(200),140,40);
+        g.setColor(new Color(18,255,10));
+        g.fillRect(Window.getX(555),Window.getY(200),140,40);
+
+        
+        //Modes
+        g.setColor(new Color(18,255,10));
+        g.fillRect(Window.getX(255),Window.getY(200),140,40);
+        g.setColor(new Color(18,255,10));
+        g.fillRect(Window.getX(405),Window.getY(200),140,40);
+        g.setColor(new Color(18,255,10));
+        g.fillRect(Window.getX(555),Window.getY(200),140,40);
+       
+
+        
+        //Modes
+        g.setColor(new Color(18,255,10));
+        g.fillRect(Window.getX(255),Window.getY(200),140,40);
+        g.setColor(new Color(18,255,10));
+        g.fillRect(Window.getX(405),Window.getY(200),140,40);
+        g.setColor(new Color(18,255,10));
+        g.fillRect(Window.getX(555),Window.getY(200),140,40);
+        
+
+        
+        //Modes
+        g.setColor(new Color(18,255,10));
+        g.fillRect(Window.getX(255),Window.getY(200),140,40);
+        g.setColor(new Color(18,255,10));
+        g.fillRect(Window.getX(405),Window.getY(200),140,40);
+        g.setColor(new Color(18,255,10));
+        g.fillRect(Window.getX(555),Window.getY(200),140,40);
+        
+
+
+        
+        //Modes
+        g.setColor(new Color(18,255,10));
+        g.fillRect(Window.getX(255),Window.getY(200),140,40);
+        g.setColor(new Color(18,255,10));
+        g.fillRect(Window.getX(405),Window.getY(200),140,40);
+        g.setColor(new Color(18,255,10));
+        g.fillRect(Window.getX(555),Window.getY(200),140,40);
+        
+ 
+        //Decide Player
+        g.setColor(new Color(18,255,10));
+        g.fillRect(Window.getX(330),Window.getY(270),140,40);
+        g.setColor(new Color(18,255,10));
+        g.fillRect(Window.getX(480),Window.getY(270),140,40);
+        
+        g.setColor(Color.white);
+        g.setFont(new Font("Times New Roman",Font.ITALIC,50));
+
+ 
+ 
+
+
+ 
+        g.drawString("ANIMACALA",Window.getX(100),Window.getY(150));
+        g.setFont(new Font("Times New Roman",Font.ITALIC,30));
+        g.drawString("READY",Window.getX(425),Window.getY(435));
+        
+        g.drawString("Capture",Window.getX(270),Window.getY(230));
+        g.drawString("Continuous",Window.getX(405),Window.getY(230));
+        g.drawString("Theft",Window.getX(590),Window.getY(230));
+        
+
+
+        g.drawString("ANIMACALA",Window.getX(100),Window.getY(150));
+        g.setFont(new Font("Times New Roman",Font.ITALIC,30));
+        g.drawString("READY",Window.getX(425),Window.getY(435));
+        
+
+        g.drawString("ANIMACALA",Window.getX(100),Window.getY(150));
+        g.setFont(new Font("Times New Roman",Font.ITALIC,30));
+        g.drawString("READY",Window.getX(425),Window.getY(435));
+        
+        g.drawString("Capture",Window.getX(270),Window.getY(230));
+        g.drawString("Continuous",Window.getX(405),Window.getY(230));
+        g.drawString("Theft",Window.getX(590),Window.getY(230));
+        g.setColor(Color.red);
+        g.setFont(new Font("Arial",Font.PLAIN,50));
+
+
+//        g.setColor(Color.white);
+//        g.fillRect(Window.getX(395),Window.getY(400),150,50);
+        
+        
+
+        g.fillRect(Window.getX(250),Window.getY(195),450,50);
+        g.fillRect(Window.getX(325),Window.getY(265),300,50);
+
+        
+        //Ready
+        g.setColor(new Color(18,255,10));
+        g.fillRect(Window.getX(400),Window.getY(405),140,40);
         
         //Modes
         g.setColor(new Color(18,255,10));

@@ -21,6 +21,14 @@ public class Mancala extends JFrame implements Runnable {
     int mostRecentRow;
     int mostRecentCol;
     boolean win;
+
+
+    public static boolean continuous;
+    public static boolean capture;
+    public static boolean theft;
+    public static boolean onePlayer;
+
+
     
 
     public static void main(String[] args) {
@@ -38,16 +46,36 @@ public class Mancala extends JFrame implements Runnable {
                 if (e.BUTTON1 == e.getButton() ) {
                     int xpos = e.getX();
                     int ypos = e.getY();
+                    if (Drawing.getBegun()){
+                        Scoops.ChangeTokenPixel(e.getX() - Window.getX(0),e.getY() - Window.getY(0));  
+                    }
 //                    Scoops.AddTokenPixel(xpos - Window.getX(0),ypos - Window.getY(0));  
                     Drawing.checkReady(xpos, ypos);
 //                    win = Scoops.CheckWin();
 //                    if (win) {
 //                        Player.getOtherPlayer().addPoints(Scoops.GetPoints());
 //                    }
+
+
+
+                }
+
+                if (e.BUTTON3 == e.getButton()) {
+//                    Scoops.ChangeTokenPixel(e.getX() - Window.getX(0),e.getY() - Window.getY(0));  
+
                     Scoops.ChangeTokenPixel(e.getX() - Window.getX(0),e.getY() - Window.getY(0));  
                 }
 
                 if (e.BUTTON3 == e.getButton()) {
+
+
+                    Scoops.ChangeTokenPixel(e.getX() - Window.getX(0),e.getY() - Window.getY(0));  
+                }
+
+                if (e.BUTTON3 == e.getButton()) {
+
+
+
                 }
                 repaint();
             }
@@ -117,23 +145,94 @@ public class Mancala extends JFrame implements Runnable {
         g.setColor(Color.red);
         g.drawPolyline(x, y, 5);
 
+
         if(!Drawing.getBegun()){
             Drawing.drawScreen();
         }
-        if(!Drawing.getBegun()){
-            Drawing.drawScreen();
-        }
+
+//        if(!begun){
+//            Drawing.drawScreen();
+//        }
+
         
         if (animateFirstTime) {
             gOld.drawImage(image, 0, 0, null);
             return;
         }
-        
+
+      
+
+
         if(Drawing.getBegun()){
             Scoops.Draw(g);
             g.drawImage(Grass,Window.getX(0),Window.getY(0),Window.getWidth2(),Window.getHeight2(),this);
             g.drawImage(Board,Window.getX(0)-40,Window.getY(2)+Window.getHeight2()/4,Window.getWidth2()+70,Window.getHeight2()/2,this);
-            //animal.Draw(g);
+         
+
+
+
+
+            if (Player.getCurrentPlayer()== Player.getPlayer1())
+            {
+                g.setColor(Color.white);
+                g.setFont(new Font("Arial",Font.BOLD,25));
+                g.drawString("Player1's turn",250,60);
+            }
+            else {
+                g.setColor(Color.black);
+                g.setFont(new Font("Arial",Font.BOLD,25));
+                g.drawString("Player2's turn" ,250,60);   
+            }
+
+            g.setColor(new Color(98,53,18));
+            g.fillRect(Window.getX(230),Window.getY(75)+Window.getHeight2()/3,Window.getWidth2()/2,Window.getHeight2()/9);
+            g.setColor(Color.black);
+            g.setFont(new Font("Arial",Font.BOLD,35));
+            g.drawString("ANIMACALA" ,350,350);   
+
+
+
+
+            if (Player.getCurrentPlayer()== Player.getPlayer1())
+            {
+                g.setColor(Color.white);
+                g.setFont(new Font("Arial",Font.BOLD,25));
+                g.drawString("Player1's turn",250,60);
+            }
+            else {
+                g.setColor(Color.black);
+                g.setFont(new Font("Arial",Font.BOLD,25));
+                g.drawString("Player2's turn" ,250,60);   
+            }
+
+            g.setColor(new Color(98,53,18));
+            g.fillRect(Window.getX(230),Window.getY(75)+Window.getHeight2()/3,Window.getWidth2()/2,Window.getHeight2()/9);
+            g.setColor(Color.black);
+            g.setFont(new Font("Arial",Font.BOLD,35));
+            g.drawString("ANIMACALA" ,350,350);   
+
+
+
+
+            if (Player.getCurrentPlayer()== Player.getPlayer1())
+            {
+                g.setColor(Color.white);
+                g.setFont(new Font("Arial",Font.BOLD,25));
+                g.drawString("Player1's turn",250,60);
+            }
+            else {
+                g.setColor(Color.black);
+                g.setFont(new Font("Arial",Font.BOLD,25));
+                g.drawString("Player2's turn" ,250,60);   
+            }
+
+            g.setColor(new Color(98,53,18));
+            g.fillRect(Window.getX(230),Window.getY(75)+Window.getHeight2()/3,Window.getWidth2()/2,Window.getHeight2()/9);
+            g.setColor(Color.black);
+            g.setFont(new Font("Arial",Font.BOLD,35));
+            g.drawString("ANIMACALA" ,350,350);   
+
+
 
 
             if (Player.getCurrentPlayer()== Player.getPlayer1())
@@ -160,7 +259,9 @@ public class Mancala extends JFrame implements Runnable {
             Scoops.Draw(g);
             g.drawImage(Grass,Window.getX(0),Window.getY(0),Window.getWidth2(),Window.getHeight2(),this);
             g.drawImage(Board,Window.getX(0)-40,Window.getY(2)+Window.getHeight2()/4,Window.getWidth2()+70,Window.getHeight2()/2,this);
-//            Animal.draw(g);
+            animal.draw(g);
+
+
             Scoops.Draw(g);
         
             g.setColor(Color.black);
@@ -189,20 +290,31 @@ public class Mancala extends JFrame implements Runnable {
             g.setColor(Color.black);
             g.setFont(new Font("Arial",Font.BOLD,35));
             g.drawString("ANIMACALA" ,350,350); 
+        
             
             
-            
+
             if (win)
             {
                 g.setColor(Color.blue);
                 g.setFont(new Font("Arial",Font.PLAIN,45));
                 g.drawString("WIN",50,200);         
             }
+
+
         }
+  gOld.drawImage(image, 0, 0, null);
+    }
+       
+
+
+
+
     
         
-                gOld.drawImage(image, 0, 0, null);
-    }
+              
+    
+    
 ////////////////////////////////////////////////////////////////////////////
 // needed for     implement runnable
     public void run() {
@@ -224,6 +336,13 @@ public class Mancala extends JFrame implements Runnable {
         Scoops.Reset();
         Player.Reset();
         animal = new Animal();
+
+
+        continuous = false;
+        capture = false;
+        theft = false;
+
+        onePlayer = false;
 
     }
 /////////////////////////////////////////////////////////////////////////
