@@ -56,7 +56,6 @@ Marbles(Color _color){
     public int getVal(){
         return value;
     }
-
     public Color getColor(){
         return (color);
     }
