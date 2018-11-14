@@ -149,28 +149,15 @@ public class Mancala extends JFrame implements Runnable {
         if(!Drawing.getBegun()){
             Drawing.drawScreen();
         }
-
-//        if(!begun){
-//            Drawing.drawScreen();
-//        }
-
-        
         if (animateFirstTime) {
             gOld.drawImage(image, 0, 0, null);
             return;
         }
-
-      
-
-
         if(Drawing.getBegun()){
+
             Scoops.Draw(g);
-            g.drawImage(Grass,Window.getX(0),Window.getY(0),Window.getWidth2(),Window.getHeight2(),this);
-            g.drawImage(Board,Window.getX(0)-40,Window.getY(2)+Window.getHeight2()/4,Window.getWidth2()+70,Window.getHeight2()/2,this);
-         
-
-
-
+            Drawing.drawImage(Grass, Window.getX(0), Window.getY(0), 0, 1, 1,Window.getWidth2(),Window.getHeight2());
+            Drawing.drawImage(Board, Window.getX(0)-40, Window.getY(2)+Window.getHeight2()/4, 0, 1, 1,Window.getWidth2()+70,Window.getHeight2()/2);
 
             if (Player.getCurrentPlayer()== Player.getPlayer1())
             {
@@ -183,76 +170,6 @@ public class Mancala extends JFrame implements Runnable {
                 g.setFont(new Font("Arial",Font.BOLD,25));
                 g.drawString("Player2's turn" ,250,60);   
             }
-
-            g.setColor(new Color(98,53,18));
-            g.fillRect(Window.getX(230),Window.getY(75)+Window.getHeight2()/3,Window.getWidth2()/2,Window.getHeight2()/9);
-            g.setColor(Color.black);
-            g.setFont(new Font("Arial",Font.BOLD,35));
-            g.drawString("ANIMACALA" ,350,350);   
-
-
-
-
-            if (Player.getCurrentPlayer()== Player.getPlayer1())
-            {
-                g.setColor(Color.white);
-                g.setFont(new Font("Arial",Font.BOLD,25));
-                g.drawString("Player1's turn",250,60);
-            }
-            else {
-                g.setColor(Color.black);
-                g.setFont(new Font("Arial",Font.BOLD,25));
-                g.drawString("Player2's turn" ,250,60);   
-            }
-
-            g.setColor(new Color(98,53,18));
-            g.fillRect(Window.getX(230),Window.getY(75)+Window.getHeight2()/3,Window.getWidth2()/2,Window.getHeight2()/9);
-            g.setColor(Color.black);
-            g.setFont(new Font("Arial",Font.BOLD,35));
-            g.drawString("ANIMACALA" ,350,350);   
-
-
-
-
-            if (Player.getCurrentPlayer()== Player.getPlayer1())
-            {
-                g.setColor(Color.white);
-                g.setFont(new Font("Arial",Font.BOLD,25));
-                g.drawString("Player1's turn",250,60);
-            }
-            else {
-                g.setColor(Color.black);
-                g.setFont(new Font("Arial",Font.BOLD,25));
-                g.drawString("Player2's turn" ,250,60);   
-            }
-
-            g.setColor(new Color(98,53,18));
-            g.fillRect(Window.getX(230),Window.getY(75)+Window.getHeight2()/3,Window.getWidth2()/2,Window.getHeight2()/9);
-            g.setColor(Color.black);
-            g.setFont(new Font("Arial",Font.BOLD,35));
-            g.drawString("ANIMACALA" ,350,350);   
-
-
-
-
-            if (Player.getCurrentPlayer()== Player.getPlayer1())
-            {
-                g.setColor(Color.white);
-                g.setFont(new Font("Arial",Font.BOLD,25));
-                g.drawString("Player1's turn",250,60);
-            }
-            else {
-                g.setColor(Color.black);
-                g.setFont(new Font("Arial",Font.BOLD,25));
-                g.drawString("Player2's turn" ,250,60);   
-            }
-
-            g.setColor(new Color(98,53,18));
-            g.fillRect(Window.getX(230),Window.getY(75)+Window.getHeight2()/3,Window.getWidth2()/2,Window.getHeight2()/9);
-            g.setColor(Color.black);
-            g.setFont(new Font("Arial",Font.BOLD,35));
-            g.drawString("ANIMACALA" ,350,350);   
-
             g.setColor(Color.blue);
             g.setFont(new Font("Arial",Font.PLAIN,45));
             g.drawString("WIN",50,200);         
@@ -263,14 +180,12 @@ public class Mancala extends JFrame implements Runnable {
 
 
             Scoops.Draw(g);
-        
+
             g.setColor(Color.black);
             g.setFont(new Font("Arial",Font.BOLD,25));
             g.drawString("Player1's side",375,463);                     
             g.drawString("Player2's side",375,213);
-            g.drawString("Player1's bank",680,463);                     
-            g.drawString("Player2's bank",45,213);
-            
+
             if (Player.getCurrentPlayer()== Player.getPlayer1())
             {
                 g.setColor(Color.white);
@@ -282,17 +197,13 @@ public class Mancala extends JFrame implements Runnable {
                 g.setFont(new Font("Arial",Font.BOLD,45));
                 g.drawString("Player2's turn" ,300,175);   
             }
-            
+
+            //Fix Board
             g.setColor(new Color(98,53,18));
-
             g.fillRect(Window.getX(315),Window.getY(75)+Window.getHeight2()/3,Window.getWidth2()/4+50,Window.getHeight2()/10);
-
             g.setColor(Color.black);
             g.setFont(new Font("Arial",Font.BOLD,35));
             g.drawString("ANIMACALA" ,350,350); 
-        
-            
-            
 
             if (win)
             {
@@ -300,21 +211,9 @@ public class Mancala extends JFrame implements Runnable {
                 g.setFont(new Font("Arial",Font.PLAIN,45));
                 g.drawString("WIN",50,200);         
             }
-
-
         }
-  gOld.drawImage(image, 0, 0, null);
+        gOld.drawImage(image, 0, 0, null);
     }
-       
-
-
-
-
-    
-        
-              
-    
-    
 ////////////////////////////////////////////////////////////////////////////
 // needed for     implement runnable
     public void run() {
@@ -359,13 +258,10 @@ public class Mancala extends JFrame implements Runnable {
 //            Panda = Toolkit.getDefaultToolkit().getImage("./Cartoon-Panda-Transparent-Image.png");
 //            Giraffe = Toolkit.getDefaultToolkit().getImage("./Giraffe.png");
             Grass = Toolkit.getDefaultToolkit().getImage("./cartoon-grass-8.jpg");
-
+            Drawing.Init();
             
             reset();
-
         }
-
-        
     }
 ////////////////////////////////////////////////////////////////////////////
     public void start() {
@@ -383,9 +279,3 @@ public class Mancala extends JFrame implements Runnable {
     }
 
 }
-
-
-
-
-
-
