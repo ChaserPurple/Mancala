@@ -149,12 +149,7 @@ public class Scoops {
             }            
             
         }
- 
-        for (int zi = 1;zi<NUM_COLUMNS;zi++)
-        {
-            g.drawLine(Window.getX(zi*xdelta),Window.getY(0),
-                    Window.getX(zi*xdelta),Window.getY(Window.getHeight2()));
-        }
+
         for (int row=0;row<NUM_ROWS;row++)
         {
             for (int col=0;col<NUM_COLUMNS;col++)
