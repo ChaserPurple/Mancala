@@ -47,7 +47,7 @@ public class Mancala extends JFrame implements Runnable {
                     int xpos = e.getX();
                     int ypos = e.getY();
                     if (Drawing.getBegun()){
-                        Scoops.ChangeTokenPixel(e.getX() - Window.getX(0),e.getY() - Window.getY(0));  
+                        Scoops.MoveMarble(e.getX() - Window.getX(0),e.getY() - Window.getY(0));  
                     }
 //                    Scoops.AddTokenPixel(xpos - Window.getX(0),ypos - Window.getY(0));  
                     Drawing.checkReady(xpos, ypos);
@@ -63,13 +63,13 @@ public class Mancala extends JFrame implements Runnable {
                 if (e.BUTTON3 == e.getButton()) {
 //                    Scoops.ChangeTokenPixel(e.getX() - Window.getX(0),e.getY() - Window.getY(0));  
 
-                    Scoops.ChangeTokenPixel(e.getX() - Window.getX(0),e.getY() - Window.getY(0));  
+                    Scoops.MoveMarble(e.getX() - Window.getX(0),e.getY() - Window.getY(0));  
                 }
 
                 if (e.BUTTON3 == e.getButton()) {
 
 
-                    Scoops.ChangeTokenPixel(e.getX() - Window.getX(0),e.getY() - Window.getY(0));  
+                    Scoops.MoveMarble(e.getX() - Window.getX(0),e.getY() - Window.getY(0));  
                 }
 
                 if (e.BUTTON3 == e.getButton()) {

@@ -57,7 +57,7 @@ public class Scoops {
 
         return;
     }
-    public static void ChangeTokenPixel(int xpixel,int ypixel) {
+    public static void MoveMarble(int xpixel,int ypixel) {
         if (xpixel < 0 || xpixel > Window.getWidth2() || ypixel < 0 || 
            ypixel > Window.getHeight2())
             return;
@@ -80,11 +80,12 @@ public class Scoops {
             currXVal += xdelta;
         }
         if (Player.getCurrentPlayer()==Player.getPlayer1()){
+                int addCol = currCol;
                 for (int zx = 0;zx<board[currRow][currCol].getVal()+1;zx++)
                 {
                     
-                    if (zx>0 && zx<7 && currRow ==2){
-                        int addCol = currCol;
+                    if (addCol>0 && addCol<7 && currRow ==2){
+                        
                         if (board[currRow][addCol] != null){
                             board[currRow][addCol].addVal();
                             addCol ++;
@@ -95,11 +96,12 @@ public class Scoops {
 
             }
             else {
+            int addCol2 = currCol;
                 for (int zx = 0;zx<board[currRow][currCol].getVal()+1;zx--)
                 {
                     
                     if (zx>0 && zx<7 && currRow ==1){
-                        int addCol2 = currCol;
+                        
                         if (board[currRow][addCol2] != null){
                         board[currRow][addCol2].addVal();
                             addCol2 ++;
