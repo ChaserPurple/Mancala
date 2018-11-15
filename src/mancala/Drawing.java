@@ -93,6 +93,42 @@ public class Drawing {
         g.drawString("1 Player",Window.getX(350),Window.getY(300));
         g.drawString("2 Player",Window.getX(500),Window.getY(300));
     }
+    public static void drawAnimals(boolean tip){
+        if(!tip){
+            g.drawImage(Animal.Panda,Window.getX(100),Window.getY(60),115,103, mainClassInst);
+//            Drawing.drawImage(Animal.Panda, Window.getX(100), Window.getY(60), 0, 1, 1, 115, 103);
+//            g.drawImage(Animal.Chicken,400,60,110,110, (ImageObserver) this);
+//            Drawing.drawImage(Animal.Chicken, Window.getX(400), Window.getY(60), 0, 1, 1, 110, 110);
+//            g.drawImage(Animal.Giraffe,700,40,117,156, (ImageObserver) this);
+//            Drawing.drawImage(Animal.Giraffe, Window.getX(700), Window.getY(40), 0, 1, 1, 117, 156);
+        }
+        else{
+            int num = (int)(Math.random()*3+1);
+    //giraffe            
+            if(num ==1){
+//                g.drawImage(Animal.Panda,100,60,115,103, mainClassInst);
+//                Drawing.drawImage(Animal.Panda, Window.getX(100), Window.getY(60), 0, 1, 1, 115, 103);
+//                g.drawImage(Animal.Chicken,400,60,110,110, mainClassInst);
+//                Drawing.drawImage(Animal.Chicken, Window.getX(400), Window.getY(60), 0, 1, 1, 110, 110);
+//                g.drawImage(Animal.Giraffe,400,600,117,156, (ImageObserver) this);
+//                Drawing.drawImage(Animal.Giraffe, Window.getX(400), Window.getY(600), 0, 1, 1, 117, 156);
+            }
+
+    //chicken           
+            if(num ==2){
+//                g.drawImage(Animal.Panda,100,60,115,103, (ImageObserver) this);
+//                g.drawImage(Animal.Chicken,400,600, 110,110, (ImageObserver) this);
+//                g.drawImage(Animal.Giraffe,700,40,117,156, (ImageObserver) this);
+            }
+
+    //panda            
+            if(num ==3){
+//                g.drawImage(Animal.Panda,400,600,   115,103, (ImageObserver) this);
+//                g.drawImage(Animal.Chicken,400,60,110,110, (ImageObserver) this);
+//                g.drawImage(Animal.Giraffe,700,40,117,156, (ImageObserver) this);
+            }
+        }
+    }
 ////////////////////////////////////////////////////////////////////////////////
     public static void checkReady(int x,int y)
     { 

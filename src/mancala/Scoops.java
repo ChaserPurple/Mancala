@@ -94,21 +94,21 @@ public class Scoops {
                     }
                 }
 
-            }
-            else {
-            int addCol2 = currCol;
-                for (int zx = 0;zx<board[currRow][currCol].getVal()+1;zx--)
-                {
-                    
-                    if (zx>0 && zx<7 && currRow ==1){
-                        
-                        if (board[currRow][addCol2] != null){
-                        board[currRow][addCol2].addVal();
-                            addCol2 ++;
-                        }
+        }
+        else {
+        int addCol2 = currCol;
+            for (int zx = 0;zx<board[currRow][currCol].getVal()+1;zx--)
+            {
+
+                if (zx>0 && zx<7 && currRow ==1){
+
+                    if (board[currRow][addCol2] != null){
+                    board[currRow][addCol2].addVal();
+                        addCol2 ++;
                     }
                 }
             }
+        }
         if (Player.getCurrentPlayer()==Player.getPlayer1()){
             if (currRow == 2){
                 board[currRow][currCol] = null;

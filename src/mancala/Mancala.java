@@ -155,10 +155,6 @@ public class Mancala extends JFrame implements Runnable {
         }
         if(Drawing.getBegun()){
 
-            Scoops.Draw(g);
-            Drawing.drawImage(Grass, Window.getX(0), Window.getY(0), 0, 1, 1,Window.getWidth2(),Window.getHeight2());
-            Drawing.drawImage(Board, Window.getX(0)-40, Window.getY(2)+Window.getHeight2()/4, 0, 1, 1,Window.getWidth2()+70,Window.getHeight2()/2);
-
             if (Player.getCurrentPlayer()== Player.getPlayer1())
             {
                 g.setColor(Color.white);
@@ -169,10 +165,7 @@ public class Mancala extends JFrame implements Runnable {
                 g.setColor(Color.black);
                 g.setFont(new Font("Arial",Font.BOLD,25));
                 g.drawString("Player2's turn" ,250,60);   
-            }
-            g.setColor(Color.blue);
-            g.setFont(new Font("Arial",Font.PLAIN,45));
-            g.drawString("WIN",50,200);         
+            }     
             Scoops.Draw(g);
             g.drawImage(Grass,Window.getX(0),Window.getY(0),Window.getWidth2(),Window.getHeight2(),this);
             g.drawImage(Board,Window.getX(0)-40,Window.getY(2)+Window.getHeight2()/4,Window.getWidth2()+70,Window.getHeight2()/2,this);
@@ -254,14 +247,12 @@ public class Mancala extends JFrame implements Runnable {
                 Window.ysize = getSize().height;
             }
             Board = Toolkit.getDefaultToolkit().getImage("./Mancala.png");
-//            Chicken = Toolkit.getDefaultToolkit().getImage("./Chicken.png");
-//            Panda = Toolkit.getDefaultToolkit().getImage("./Cartoon-Panda-Transparent-Image.png");
-//            Giraffe = Toolkit.getDefaultToolkit().getImage("./Giraffe.png");
             Grass = Toolkit.getDefaultToolkit().getImage("./cartoon-grass-8.jpg");
             Drawing.Init();
             
             reset();
         }
+        Drawing.drawAnimals(false);
     }
 ////////////////////////////////////////////////////////////////////////////
     public void start() {
