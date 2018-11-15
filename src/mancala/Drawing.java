@@ -92,9 +92,10 @@ public class Drawing {
         g.drawString("2 Player",Window.getX(500),Window.getY(300));
     }
     public static void drawAnimals(boolean tip){
+        Animal.draw(g);
         if(!tip){
 //            g.drawImage(Animal.Panda,Window.getX(100),Window.getY(60),115,103, mainClassInst);
-//            Drawing.drawImage(Animal.Panda, Window.getX(100), Window.getY(60), 0, 115, 103);
+            Drawing.drawImage(Animal.Panda, Window.getX(35), Window.getY(15), 0, 115, 103);
 //            g.drawImage(Animal.Chicken,400,60,110,110, (ImageObserver) this);
 //            Drawing.drawImage(Animal.Chicken, Window.getX(400), Window.getY(60), 0, 1, 1, 110, 110);
 //            g.drawImage(Animal.Giraffe,700,40,117,156, (ImageObserver) this);

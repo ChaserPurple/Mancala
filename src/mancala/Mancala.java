@@ -171,7 +171,7 @@ public class Mancala extends JFrame implements Runnable {
             Drawing.drawImage(Grass, Window.getX(0), Window.getY(-15), 0, Window.getWidth2(), Window.getHeight2());
 //            g.drawImage(Board,Window.getX(0)-40,Window.getY(2)+Window.getHeight2()/4,Window.getWidth2()+70,Window.getHeight2()/2,this);
             Drawing.drawImage(Board, Window.getX(0)-20, Window.getY(-14)+Window.getHeight2()/8, 0, Window.getWidth2()+70, Window.getHeight2()/2);
-            animal.draw(g);
+//            animal.draw(g);
 
 
             Scoops.Draw(g);
