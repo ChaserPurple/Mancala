@@ -29,17 +29,15 @@ public class Drawing {
         mainClassInst = _mainClassInst;
     }
 ////////////////////////////////////////////////////////////////////////////////
-     public static void drawImage(Image image,int xpos,int ypos,double rot,double xscale,double yscale,int width,int height) 
+     public static void drawImage(Image image,int xpos,int ypos,double rot,int width,int height) 
     {
-//         = image.getWidth(mainClassInst);
-//         = image.getHeight(mainClassInst);
+//        int width = image.getWidth(mainClassInst);
+//        int height = image.getHeight(mainClassInst);
         g.translate(xpos,ypos);
         g.rotate(rot  * Math.PI/180.0);
-        g.scale( xscale , yscale );
 
-        g.drawImage(image,-width/2,-height/2,width,height,mainClassInst);
+        g.drawImage(image,xpos,ypos,width,height,mainClassInst);
 
-        g.scale( 1.0/xscale,1.0/yscale );
         g.rotate(-rot  * Math.PI/180.0);
         g.translate(-xpos,-ypos);
     }
@@ -95,8 +93,8 @@ public class Drawing {
     }
     public static void drawAnimals(boolean tip){
         if(!tip){
-            g.drawImage(Animal.Panda,Window.getX(100),Window.getY(60),115,103, mainClassInst);
-//            Drawing.drawImage(Animal.Panda, Window.getX(100), Window.getY(60), 0, 1, 1, 115, 103);
+//            g.drawImage(Animal.Panda,Window.getX(100),Window.getY(60),115,103, mainClassInst);
+//            Drawing.drawImage(Animal.Panda, Window.getX(100), Window.getY(60), 0, 115, 103);
 //            g.drawImage(Animal.Chicken,400,60,110,110, (ImageObserver) this);
 //            Drawing.drawImage(Animal.Chicken, Window.getX(400), Window.getY(60), 0, 1, 1, 110, 110);
 //            g.drawImage(Animal.Giraffe,700,40,117,156, (ImageObserver) this);
