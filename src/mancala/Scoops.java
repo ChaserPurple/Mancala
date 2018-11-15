@@ -17,7 +17,10 @@ public class Scoops {
             for (int zx = 0;zx<NUM_COLUMNS;zx++)
             {
                 if (zi>0 && zi<3 && zx>0 && zx<7){
-                    board[zi][zx] = new Marbles(new Color(0,0,0));
+                    board[zi][zx] = new Marbles(new Color(0,0,0),4);
+                }
+                else {
+                     board[zi][zx] =null;
                 }
             }
         }
@@ -81,17 +84,23 @@ public class Scoops {
         }
         if (Player.getCurrentPlayer()==Player.getPlayer1()){
                 int addCol = currCol;
-                for (int zx = 0;zx<board[currRow][currCol].getVal()+1;zx++)
-                {
-                    
+                for (int zx = 0;zx<board[currRow][currCol].getVal();zx++)
+                {  
                     if (addCol>0 && addCol<7 && currRow ==2){
                         
                         if (board[currRow][addCol] != null){
                             board[currRow][addCol].addVal();
-                            addCol ++;
+                            
                         }
-                        
+                        else if (board[currRow][addCol] == null)
+                        {
+                            board[currRow][addCol] = new Marbles(new Color(0,0,0), 0);
+                        }
                     }
+                        if (addCol>6){
+                        board[currRow][addCol] = new Marbles(new Color(0,0,0), 1);
+                        }
+                        addCol ++;
                 }
 
         }
@@ -105,7 +114,28 @@ public class Scoops {
                     if (board[currRow][addCol2] != null){
                     board[currRow][addCol2].addVal();
                         addCol2 ++;
+            
+            }
+            else {
+            int addCol1 = currCol;
+                for (int x = 0;x<board[currRow][currCol].getVal(); x--)
+                {
+                    
+                    if (addCol1>0 && addCol1<7 && currRow ==1){
+                        
+                        if (board[currRow][addCol1] != null){
+                        board[currRow][addCol1].addVal();
+                            
+                        }
+                        else if (board[currRow][addCol2] == null)
+                        {
+                            board[currRow][addCol2] = new Marbles(new Color(0,0,0), 0);
+                        }
                     }
+                    if (addCol2<1){
+                        board[currRow][addCol2] = new Marbles(new Color(0,0,0), 1);
+                        }
+                        addCol2 --;
                 }
             }
         }
@@ -117,7 +147,7 @@ public class Scoops {
                 return;
             }
         }
-        if (Player.getCurrentPlayer()==Player.getPlayer2())
+        else if (Player.getCurrentPlayer()==Player.getPlayer2())
         {
             if (currRow == 1){
                 board[currRow][currCol] = null;
@@ -127,8 +157,11 @@ public class Scoops {
             }
             
         }
+        Player.switchTurn();
             
         
+    }
+        }
     }
        
     public static void Draw(Graphics2D g) {
